@@ -1,0 +1,29 @@
+// L23 - P4: minimizzazione dell'esportazione.
+// L'obiettivo e lasciare esposti solo i componenti strettamente necessari.
+
+data class AppComponentP4(
+    val name: String,
+    val exported: Boolean
+)
+
+class ExportMinimizationSimulatorP4 {
+    fun minimize(components: List<AppComponentP4>): List<AppComponentP4> {
+        return components.map { component ->
+            if (component.name.startsWith("Internal")) {
+                component.copy(exported = false)
+            } else {
+                component
+            }
+        }
+    }
+}
+
+// Caso d'uso di base: riduciamo l'esportazione dei componenti interni.
+fun demoL23P4ExportMinimization(): List<AppComponentP4> {
+    val components = listOf(
+        AppComponentP4("InternalSettingsActivity", exported = true),
+        AppComponentP4("ShareActivity", exported = true)
+    )
+
+    return ExportMinimizationSimulatorP4().minimize(components)
+}
