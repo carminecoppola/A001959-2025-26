@@ -14,8 +14,8 @@ class JwtDecoderSimulatorP4 {
         val payloadPart = parts.getOrNull(1).orEmpty()
         val json = String(Base64.getUrlDecoder().decode(payloadPart))
 
-        val subject = Regex("\"sub\"\s*:\s*\"([^\"]+)\"").find(json)?.groupValues?.get(1) ?: ""
-        val role = Regex("\"role\"\s*:\s*\"([^\"]+)\"").find(json)?.groupValues?.get(1) ?: ""
+        val subject = Regex("\"sub\"\\s*:\\s*\"([^\"]+)\"").find(json)?.groupValues?.get(1) ?: ""
+        val role = Regex("\"role\"\\s*:\\s*\"([^\"]+)\"").find(json)?.groupValues?.get(1) ?: ""
 
         return JwtPayloadP4(subject = subject, role = role)
     }
