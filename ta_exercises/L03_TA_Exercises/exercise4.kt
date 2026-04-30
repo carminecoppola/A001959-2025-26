@@ -2,6 +2,8 @@
 
 // Exercise 4 - Smart Cast - Show how Kotlin automatically casts after a null check.
 
+package l03.exercise4
+
 fun printLength(text: String?) {
     // Il compilatore Kotlin tiene traccia dei controlli espliciti sul valore null.
     // All'interno del blocco 'if (text != null)', sa con certezza che

@@ -2,6 +2,8 @@
 
 // Exercise 1 - Spot the NPE (NullPointerException)
 
+package l03.exercise1
+
 // In Java, chiamare un metodo su un riferimento null causa un
 // NullPointerException (NPE) a RUNTIME, che può far crashare l'applicazione se non gestito correttamente.
 // Kotlin risolve questo problema a livello di SISTEMA DEI TIPI:

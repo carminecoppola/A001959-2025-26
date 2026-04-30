@@ -2,6 +2,8 @@
 
 // Exercise 5 - let with Nullable - Use .let {} to execute a block only when value is non-null.
 
+package l03.exercise5
+
 fun main() {
     val email: String? = "alice@example.com"
 

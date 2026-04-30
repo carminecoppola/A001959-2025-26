@@ -2,6 +2,8 @@
 
 // Exercise 3 - Elvis with Early Return - Use Elvis operator for early return pattern
 
+package l03.exercise3
+
 // Pattern molto comune in Android: uscire subito da una funzione
 // se un parametro nullable non è valido (guard clause).
 fun processUser(name: String?) {

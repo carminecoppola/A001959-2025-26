@@ -2,6 +2,8 @@
 
 // Exercise 2 - Safe Call Chain - Build a nested nullable chain and safely access deeply nested properties.
 
+package l03.exercise2
+
 // Le 'data class' sono classi pensate per contenere dati.
 // Kotlin genera automaticamente equals(), hashCode(), toString() e copy().
 data class Address(val city: String?, val zip: String?)
