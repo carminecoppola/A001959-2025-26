@@ -2,6 +2,8 @@
 
 // Exercise 3 - Lambda Basics - Create lambdas for common math operations. Store them in variables.
 
+package l04.exercise3
+
 fun main() {
     // Una LAMBDA è una funzione anonima che può essere assegnata a una variabile,
     // passata come argomento o restituita da un'altra funzione.

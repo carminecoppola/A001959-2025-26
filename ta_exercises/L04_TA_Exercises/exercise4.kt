@@ -2,6 +2,8 @@
 
 // Exercise 4 - Higher-Order Functions - Write a function that takes a list and a transformation lambda.
 
+package l04.exercise4
+
 // Una HIGHER-ORDER FUNCTION è una funzione che:
 //  - accetta altre funzioni come parametri, oppure
 //  - restituisce una funzione come risultato (o entrambe le cose)

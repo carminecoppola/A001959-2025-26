@@ -3,6 +3,8 @@
 // Exercise 5 - map / filter / reduce - Process a list of scores: 
 // filter passing (>=50), double them, sum the result.
 
+package l04.exercise5
+
 fun main() {
     val scores = listOf(34, 67, 82, 45, 91, 55, 28)
 

@@ -2,6 +2,8 @@
 
 // Exercise 1 - Default Parameters - Create a sendEmail function with default values. Call it different ways.
 
+package l04.exercise1
+
 // In Kotlin è possibile assegnare valori di default ai parametri di una funzione.
 // Questo elimina la necessità di creare multiple versioni sovraccaricate (overload)
 // della stessa funzione, come invece si fa comunemente in Java.

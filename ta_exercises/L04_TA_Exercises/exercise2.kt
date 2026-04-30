@@ -2,6 +2,8 @@
 
 // Exercise 2 - Single Expression Functions - Convert a function to a single expression function
 
+package l04.exercise2
+
 // Quando il corpo di una funzione è una singola espressione,
 // Kotlin permette di omettere le parentesi graffe e il 'return',
 // usando la sintassi con '=' (assignment form).
