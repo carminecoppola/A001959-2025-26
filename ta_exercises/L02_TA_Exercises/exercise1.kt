@@ -3,6 +3,8 @@
 // Exercise 1 - If statement as expression - Rewrite a C-style if/else as a Kotlin expression
 // and assign the result to a val
 
+package l02.exercise1
+
 fun main() {
     val score = 85
 

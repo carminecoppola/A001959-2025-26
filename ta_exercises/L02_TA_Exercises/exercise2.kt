@@ -2,6 +2,8 @@
 
 // Exercise 2 - When expression - Write a when expression that maps HTTP status codes to descriptions
 
+package l02.exercise2
+
 // 'when' è l'equivalente potenziato dello 'switch' di Java/C,
 // ma molto più espressivo: può confrontare valori, range, tipi e altro.
 // Anche 'when', come 'if', è un'espressione e può restituire un valore.

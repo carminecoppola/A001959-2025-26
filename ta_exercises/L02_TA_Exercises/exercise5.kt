@@ -2,6 +2,8 @@
 
 // Exercise 5 - Nested when with is
 
+package l02.exercise5
+
 // 'Any' è il supertipo di tutti i tipi in Kotlin (equivale a Object in Java).
 // Usando 'is' possiamo verificare il tipo a runtime.
 fun describe(obj: Any): String = when (obj) {

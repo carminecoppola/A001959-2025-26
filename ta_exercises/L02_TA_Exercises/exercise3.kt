@@ -2,6 +2,8 @@
 
 // Exercise 3 - Range Loops - Print multiplication table for 5 using for with a range
 
+package l02.exercise3
+
 fun main() {
     // In Kotlin i range si creano con l'operatore '..' (es. 1..10)
     // e includono sia il limite inferiore che quello superiore (range chiuso)

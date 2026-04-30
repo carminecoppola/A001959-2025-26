@@ -2,6 +2,8 @@
 
 // Exercise 4 - While Loop - Guess the number
 
+package l02.exercise4
+
 fun main() {
     val secret = 7   // il numero segreto da indovinare
     var guess = 0    // tentativo corrente (inizializzato a 0, diverso da secret)
