@@ -2,6 +2,8 @@
 
 // Exercise 4 - String Templates
 
+package l01.exercise4
+
 fun main() {
     val a = 10
     val b = 3

@@ -2,6 +2,8 @@
 
 // Exercise 2 - VAL vs VAR
 
+package l01.exercise2
+
 fun main() {
     // 'val' (value) → variabile immutabile, simile a 'final' in Java
     // Una volta assegnata, non può essere modificata

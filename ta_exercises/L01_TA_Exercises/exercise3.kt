@@ -2,6 +2,8 @@
 
 // Exercise 3 - Types and Type Inference
 
+package l01.exercise3
+
 fun main() {
 
     val message = "Kotlin"   // tipo inferito: String

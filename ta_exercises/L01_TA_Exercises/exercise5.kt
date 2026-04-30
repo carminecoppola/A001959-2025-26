@@ -2,6 +2,8 @@
 
 // Exercise 5 - Reading Input
 
+package l01.exercise5
+
 fun main() {
     // 'print' (senza 'ln') stampa senza andare a capo, così il cursore
     // rimane sulla stessa riga dell'input dell'utente
