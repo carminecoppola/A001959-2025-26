@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="display_initial_value">0</string>
+    <string name="button_clear">AC</string>
+    <string name="button_backspace">⌫</string>
+    <string name="button_toggle_sign">+/-</string>
+    <string name="button_percent">%</string>
+    <string name="button_divide">÷</string>
+    <string name="button_multiply">×</string>
+    <string name="button_subtract">−</string>
+    <string name="button_add">+</string>
+    <string name="button_equals">=</string>
+    <string name="button_decimal">.</string>
+</resources>

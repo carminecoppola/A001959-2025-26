@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hello World</string>
+    <string name="name_hint">Your name</string>
+    <string name="button_say_hello">Say Hello</string>
+    <string name="default_greeting">Hello, World!</string>
+    <string name="personal_greeting">Hello, %1$s!</string>
+    <string name="initial_message">Enter your name</string>
+</resources>
