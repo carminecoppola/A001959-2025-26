@@ -1,1 +1,32 @@
+# Build and compilation output
+homework/out/
+homework/reports/
+homework/.generated_runners/
+
+# IDE and editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Gradle
+.gradle/
+build/
+*.gradle.kts.bak
+
+# Kotlin
+*.class
 *.jar
+*.zip
+
+# Temporary files
+*.tmp
+*.temp
+
+*.iml
+
+homework/
+
+
