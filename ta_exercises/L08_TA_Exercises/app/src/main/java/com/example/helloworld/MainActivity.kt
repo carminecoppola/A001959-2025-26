@@ -1,47 +1,57 @@
 package com.example.helloworld
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.helloworld.ui.theme.HelloWorldTheme
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.example.helloworld.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
+/**
+ * MainActivity is the entry point of the application.
+ *
+ * This example is intentionally simple and academic:
+ * - it shows how to connect Kotlin code to XML views;
+ * - it uses ViewBinding instead of findViewById;
+ * - it introduces basic input validation and error handling.
+ */
+class MainActivity : AppCompatActivity() {
+
+    /**
+     * ViewBinding object generated from activity_main.xml.
+     *
+     * The XML file activity_main.xml generates a class called ActivityMainBinding.
+     * Each view with an id becomes a Kotlin property of this object.
+     */
+    private lateinit var binding: ActivityMainBinding
+
+    /**
+     * onCreate is called when the Activity is created.
+     * Here we initialize the user interface and define the button behavior.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            HelloWorldTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnGreet.setOnClickListener {
+            greetStudent()
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    /**
+     * Reads the user input, validates it, and updates the message on screen.
+     */
+    @SuppressLint("SetTextI18n")
+    private fun greetStudent() {
+        val studentName = binding.etStudentName.text.toString().trim()
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    HelloWorldTheme {
-        Greeting("Android")
+        if (studentName.isEmpty()) {
+            binding.tvMessage.text = "Error: name cannot be empty."
+            Toast.makeText(this, "Please insert your name", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        binding.tvMessage.text = "Hello, $studentName! Welcome to Android Studio."
     }
 }
