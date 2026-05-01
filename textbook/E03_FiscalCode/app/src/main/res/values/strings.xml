@@ -6,10 +6,10 @@
     <string name="label_sex">Sesso</string>
     <string name="label_male">M</string>
     <string name="label_female">F</string>
-    <string name="label_birthplace">Comune di nascita (es. Naples)</string>
+    <string name="label_birthplace">Codice catastale comune (es. F839 = Napoli)</string>
     <string name="button_compute">Calcola Codice Fiscale</string>
     <string name="hint_surname">Rossi</string>
     <string name="hint_name">Mario</string>
     <string name="hint_birthdate">1990-01-15</string>
-    <string name="hint_birthplace">Naples</string>
+    <string name="hint_birthplace">F839</string>
 </resources>

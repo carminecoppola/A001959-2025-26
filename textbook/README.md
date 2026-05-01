@@ -269,7 +269,6 @@ By completing all exercises, the student demonstrates:
 ## 👨‍💻 Author
 
 Simone Perrotta
-Mobile Programming – A001959
 Università degli Studi di Napoli “Parthenope”
 
 ---

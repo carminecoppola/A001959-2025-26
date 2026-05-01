@@ -24,11 +24,11 @@ def compute_fiscal_code():
     try:
         birthdate = datetime.strptime(data['birthdate'], '%Y-%m-%d')
         cf = codicefiscale.build(
-            data['surname'],
-            data['name'],
-            sex,
-            birthdate,
-            data['birthplace']
+        data['surname'],
+        data['name'],
+        birthdate,
+        sex,
+        data['birthplace']
         )
         return jsonify({"fiscal_code": cf, "input": data})
     except ValueError as e:
