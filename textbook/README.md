@@ -1,278 +1,164 @@
 # 📱 Android Textbook Exercises (Appendix E) – Kotlin Projects
 
-This repository contains a collection of **fully implemented Android applications** based on **Appendix E of the course textbook**:
+This repository contains **fully implemented Android applications** based on **Appendix E of the course textbook**:
 
 > *Mobile Programming with Android and Kotlin – A001959*
 
-Each exercise is developed as a **standalone Android Studio project**, following a professional software engineering approach.
+Each exercise is a **standalone Android Studio project**, following a professional software engineering approach.
 
 ---
 
 ## 📂 Repository Structure
 
 ```text
-textbook/
-├── E01_HelloWorld/
-├── E02_Calculator/
-├── E03_...
-├── E04_...
-├── ...
+A001959-2025-26/
+├── homework/          ← simple Kotlin exercises (.kt)
+├── ta_exercises/      ← guided exercises
+└── textbook/          ← Android projects (Appendix E)
+    ├── E01_HelloWorld/
+    ├── E02_Calculator/
+    ├── E03_FiscalCode/
+    ├── E04_WeatherForecast/
+    ├── E05_AcademicCareer/
+    └── E06_Breakdroid/
 ```
 
-⚠️ **Important**
-The `textbook/` folder is NOT an Android project.
-Each `E0X_*` directory is an **independent Gradle project**.
+⚠️ **Important:** `textbook/` is NOT an Android project. Each `E0X_*` directory is an **independent Gradle project** — always open them individually in Android Studio.
 
 ---
 
-## 🎯 Project Philosophy
+## 🧩 Exercises
 
-The exercises are not simple coding tasks, but are designed to simulate **real-world Android development**:
+### ✅ E01 — Hello World
 
-* Clean and modular architecture
-* Separation of concerns (UI vs logic)
-* Lifecycle-aware components
-* Robust error handling
-* Code suitable for academic evaluation
+Basic Android app introducing Activity lifecycle, XML UI, View Binding and state persistence on rotation (`onSaveInstanceState`).
 
-
+**Key features:** text input, "Say Hello" button, IME handling, keyboard management, rotation-safe state.
 
 ---
 
-## 🧩 Exercises Description
+### ✅ E02 — Calculator
 
-### ✅ E01 — HelloWorld
+Structured calculator with MVVM architecture.
 
-A basic Android application introducing:
-
-* Activity lifecycle
-* XML-based UI
-* User input handling
-* View Binding integration
-
-**Features:**
-
-* Text input for user name
-* “Say Hello” button
-* IME action handling (DONE)
-* Input validation (trim)
-* Keyboard management
-* State persistence on rotation (`onSaveInstanceState`)
+**Architecture:** Activity (UI only) + ViewModel (logic) + LiveData  
+**Key features:** +−×÷, decimals, percentage, sign toggle, division-by-zero handling, GridLayout UI, state persistence on rotation.
 
 ---
 
-### 🧮 E02 — Calculator
+### ✅ E03 — Italian Fiscal Code
 
-A structured calculator application with proper architecture.
+App that computes the Italian codice fiscale by calling a local Python/Flask backend.
 
-**Architecture:**
+**Stack:** Retrofit + OkHttp + Coroutines + ViewModel  
+**Backend:** Flask + `codicefiscale` library (run locally on port 8080)  
+**Key features:** form input (cognome, nome, data, sesso, codice catastale), HTTP POST to `10.0.2.2:8080`, error handling.
 
-* Activity → UI layer only
-* ViewModel → business logic
-
-**Technologies:**
-
-* View Binding
-* ViewModel
-* LiveData
-* BigDecimal (precision-safe arithmetic)
-
-**Features:**
-
-* Basic operations (+ − × ÷)
-* Decimal support
-* Percentage calculation
-* Sign toggle (+/−)
-* Division-by-zero handling
-* State persistence across rotation
-* Grid-based UI (GridLayout)
-
-
+> ⚠️ Requires backend running: `cd textbook/E03_FiscalCode/backend && python app.py`
 
 ---
 
-### 📱 E03+ — Advanced Application Exercises
+### ✅ E04 — Weather Forecast
 
-Subsequent exercises extend the same principles and introduce:
+Meteo app using the real WRF5 API from CCMMMA lab at Università Parthenope.
 
-* More complex UI layouts
-* Multi-component interaction
-* Improved state management
-* Architectural scalability
-* Real-world app design patterns
-
-Each project is structured as a **complete Android application**, not a partial implementation.
+**Stack:** Retrofit + OkHttp + Coroutines + ViewModel + RecyclerView  
+**API:** `https://api.meteo.uniparthenope.it/products/wrf5/timeseries/{place}`  
+**Key features:** city spinner (Naples, Rome, Milan, Salerno), current conditions display, horizontal hourly forecast RecyclerView, weather emoji mapping.
 
 ---
 
-## ⚙️ Technologies Used
+### ✅ E05 — Academic Career
 
-* **Kotlin**
-* **Android SDK**
-* **Android Studio**
-* **Gradle (Kotlin DSL)**
-* **View Binding**
-* **ViewModel & LiveData**
+Login + career app using the real Uniparthenope student API with encrypted credential storage.
+
+**Stack:** Retrofit + OkHttp + Coroutines + AndroidViewModel + EncryptedSharedPreferences  
+**API:** `https://api.uniparthenope.it/UniparthenopeApp/v1/`  
+**Key features:** Basic Auth login (username ESSE3 format `aXXXXXX`), EncryptedSharedPreferences (AES256), session persistence, career summary (CFU, media), exam list with RecyclerView, logout, FLAG_SECURE screen protection.
+
+---
+
+### ✅ E06 — Breakdroid
+
+Full Breakout/Arkanoid game built on a custom SurfaceView with a dedicated game loop thread.
+
+**Key concepts:** SurfaceView + SurfaceHolder, GameThread (60 FPS loop), AABB collision detection, sealed GameState machine, lifecycle integration (pause/resume).  
+**Key features:** touch-controlled paddle, multi-level progression, 3 lives, score HUD, full-screen immersive mode, colored brick grid.
+
+---
+
+## ⚙️ Technologies
+
+| Technology | Used in |
+|---|---|
+| Kotlin | All |
+| View Binding | All |
+| ViewModel + LiveData | E02, E03, E04, E05 |
+| Retrofit + OkHttp | E03, E04, E05 |
+| Coroutines | E03, E04, E05 |
+| EncryptedSharedPreferences | E05 |
+| RecyclerView | E04, E05 |
+| SurfaceView + Canvas | E06 |
+| Python/Flask backend | E03 |
 
 ---
 
 ## 💻 Requirements
 
-To build and run the projects:
+- Android Studio (latest stable)
+- JDK 17+
+- Emulator or physical device (API 26+)
+- Python 3.9+ with pip (E03 only)
 
-### Software
+---
 
-* Android Studio (latest stable)
-* JDK 17+
-* Gradle (wrapper included)
+## 🚀 How to Open a Project
 
-### Hardware
+```
+File → Open → textbook/E0X_ProjectName
+```
 
-* Minimum 8 GB RAM (16 GB recommended)
-* Emulator or physical Android device (API 26+)
-
-
+Never open `textbook/` directly — it is not a Gradle project.
 
 ---
 
 ## 🚀 How to Build (Terminal)
 
-Each exercise must be built independently.
-
-### 1. Navigate to the project
-
 ```bash
 cd textbook/E02_Calculator
-```
-
-### 2. Clean project
-
-```bash
-./gradlew clean
-```
-
-### 3. Build APK
-
-```bash
 ./gradlew assembleDebug
 ```
-
-### 4. Run tests (optional)
-
-```bash
-./gradlew test
-```
-
----
-
-## ▶️ How to Run (Android Studio)
-
-1. Open Android Studio
-2. Click:
-
-```
-File → Open
-```
-
-3. Select:
-
-```
-textbook/E0X_ProjectName
-```
-
-4. Wait for Gradle sync
-5. Run on emulator/device
-
----
-
-## 🧪 Testing Strategy
-
-Each project is tested for:
-
-* User input correctness
-* Button interactions
-* UI behavior
-* Screen rotation handling
-* Error cases (e.g., invalid input)
-
-
 
 ---
 
 ## ⚠️ Common Errors & Fixes
 
-### ❌ “Does not contain a Gradle build”
+**"Does not contain a Gradle build"** → Open `textbook/E0X_...` not `textbook/`
 
-Cause:
+**ViewBinding not found** → Add `buildFeatures { viewBinding = true }` in `app/build.gradle.kts`
 
-* Opening `textbook/` instead of a project
+**Theme.Material3 not found** → Replace theme parent with `Theme.AppCompat.Light.NoActionBar`
 
-Fix:
+**`kotlin-compose` plugin error** → Replace with `kotlin-android` in `libs.versions.toml` and `build.gradle.kts`
 
-```
-Open textbook/E0X_ProjectName
-```
-
----
-
-### ❌ ViewBinding not found
-
-Fix:
-
-```kotlin
-buildFeatures {
-    viewBinding = true
-}
-```
-
----
-
-### ❌ GridLayout crash
-
-Use:
-
-```xml
-<android.widget.GridLayout>
-```
-
-NOT:
-
-```xml
-androidx.constraintlayout.widget.GridLayout
-```
-
----
-
-### ❌ AppCompatActivity errors
-
-Fix:
-Use:
-
-```kotlin
-ComponentActivity
-```
+**`Cannot add extension 'kotlin'`** → AGP 9.x applies Kotlin automatically; remove `alias(libs.plugins.kotlin.android)` from `app/build.gradle.kts`
 
 ---
 
 ## 🧠 Learning Outcomes
 
-By completing all exercises, the student demonstrates:
+By completing all exercises the student demonstrates:
 
-* Ability to build Android apps using Kotlin
-* Understanding of Android architecture patterns
-* Proper separation between UI and logic
-* Handling of lifecycle and state
-* Writing maintainable and testable code
+- Building Android apps in Kotlin with clean architecture
+- MVVM pattern with ViewModel and LiveData
+- REST API integration with Retrofit and Coroutines
+- Secure local storage with EncryptedSharedPreferences
+- Real-time 2D rendering with SurfaceView
+- Lifecycle-aware component management
 
 ---
 
 ## 👨‍💻 Author
 
-Simone Perrotta
-Università degli Studi di Napoli “Parthenope”
-
----
-
-## 📌 Final Note
-
-These exercises represent a **progressive and structured learning path**, aligned with the official course textbook and designed to reflect **real-world Android development practices**.
+Simone Perrotta  
+Università degli Studi di Napoli "Parthenope"
