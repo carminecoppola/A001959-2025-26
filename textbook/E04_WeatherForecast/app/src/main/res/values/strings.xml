@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Meteo Parthenope</string>
+    <string name="label_city">Seleziona città</string>
+    <string name="label_current_temp">Temperatura</string>
+    <string name="label_wind">Vento</string>
+    <string name="label_humidity">Umidità</string>
+    <string name="loading">Caricamento…</string>
+</resources>
