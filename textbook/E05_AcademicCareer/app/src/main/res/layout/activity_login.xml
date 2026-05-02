@@ -20,8 +20,8 @@
         android:id="@+id/etMatricola"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_matricola"
-        android:inputType="number"
+        android:hint="Username ESSE3 (es. a001959)"
+        android:inputType="text"
         android:imeOptions="actionNext"
         android:layout_marginBottom="12dp" />
 
