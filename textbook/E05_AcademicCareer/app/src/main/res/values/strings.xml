@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Carriera Universitaria</string>
+    <string name="hint_matricola">Matricola</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Accedi</string>
+    <string name="btn_logout">Logout</string>
+    <string name="label_credits">CFU</string>
+    <string name="label_average">Media</string>
+</resources>
