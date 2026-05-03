@@ -36,3 +36,8 @@ fun demoL19P1PermissionRequest(): List<String> {
         simulator.revoke("android.permission.CAMERA")
     )
 }
+
+fun main() {
+    val results = demoL19P1PermissionRequest()
+    results.forEach { println(it) }
+}

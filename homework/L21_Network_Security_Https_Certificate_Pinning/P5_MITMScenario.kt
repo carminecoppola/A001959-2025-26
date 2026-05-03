@@ -24,3 +24,9 @@ fun demoL21P5MITMScenario(): List<String> {
         detector.inspect("unknown-pin")
     )
 }
+
+fun main() {
+    println("=== MITM Scenario ===")
+    val results = demoL21P5MITMScenario()
+    results.forEach { println(it) }
+}

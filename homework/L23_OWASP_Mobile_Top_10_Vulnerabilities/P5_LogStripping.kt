@@ -24,3 +24,10 @@ fun demoL23P5LogStripping(): List<String> {
         simulator.log(BuildTypeP5.RELEASE, "Token: secret-123")
     )
 }
+
+fun main() {
+    println("=== Log Stripping ===")
+    val results = demoL23P5LogStripping()
+    println("Debug: ${results[0]}")
+    println("Release: ${results[1]}")
+}

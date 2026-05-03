@@ -9,9 +9,12 @@ class ArchitectureDiagramSimulatorP1 {
     fun render(): String {
         return """
             App UI -> ViewModel -> Repository -> Data Source
-                 |                         |
-                 v                         v
-              Auth Service            Secure Storage
+                 |            |             |
+                 v            v             v
+            Auth Flow     Session Mgmt   Secure Storage
+                 |                          |
+                 v                          v
+              OAuth2 / Biometrics      Encrypted Token Store
         """.trimIndent()
     }
 }
@@ -19,4 +22,9 @@ class ArchitectureDiagramSimulatorP1 {
 // Caso d'uso di base: generiamo un diagramma testuale semplice.
 fun demoL24P1ArchitectureDiagram(): String {
     return ArchitectureDiagramSimulatorP1().render()
+}
+
+fun main() {
+    println("=== Architecture Diagram ===")
+    println(demoL24P1ArchitectureDiagram())
 }

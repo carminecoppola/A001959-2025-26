@@ -14,3 +14,8 @@ fun demoP1EntityDefinition(): List<BookEntityP1> {
         BookEntityP1(2, "Android Guide", "Sara")
     )
 }
+
+fun main() {
+    val books = demoP1EntityDefinition()
+    books.forEach { println("ID: ${it.id}, Title: ${it.title}, Author: ${it.author}") }
+}

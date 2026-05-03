@@ -25,3 +25,9 @@ fun demoL19P5AllowBackupRisk(): List<String> {
         analyzer.evaluate(BackupRiskP5(allowBackup = true, containsSensitiveData = false))
     )
 }
+
+fun main() {
+    println("=== AllowBackup Risk ===")
+    val results = demoL19P5AllowBackupRisk()
+    results.forEach { println(it) }
+}

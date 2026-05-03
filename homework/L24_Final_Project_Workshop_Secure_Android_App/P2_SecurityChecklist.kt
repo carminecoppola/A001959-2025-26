@@ -7,7 +7,13 @@ class SecurityChecklistSimulatorP2 {
         "Token salvati in modo sicuro",
         "Permessi minimi",
         "Log sensibili rimossi",
-        "Backup verificato"
+        "Backup verificato",
+        "Biometria o PIN di fallback",
+        "OAuth2 con refresh token",
+        "JWT con scadenza controllata",
+        "Componenti esportati minimizzati",
+        "ProGuard/R8 attivo",
+        "Nessun secret hardcoded"
     )
 
     fun items(): List<String> = checklist
@@ -20,5 +26,14 @@ class SecurityChecklistSimulatorP2 {
 // Caso d'uso di base: controlliamo alcuni elementi gia completati.
 fun demoL24P2SecurityChecklist(): List<String> {
     val simulator = SecurityChecklistSimulatorP2()
-    return simulator.completedItems(setOf("HTTPS attivo", "Permessi minimi", "Backup verificato"))
+    return simulator.completedItems(setOf("HTTPS attivo", "Permessi minimi", "Backup verificato", "Nessun secret hardcoded"))
+}
+
+fun main() {
+    println("=== Security Checklist ===")
+    val simulator = SecurityChecklistSimulatorP2()
+    val completed = demoL24P2SecurityChecklist()
+    println("Completati:")
+    completed.forEach { println("- $it") }
+    println("Totale checklist: ${simulator.items().size}")
 }

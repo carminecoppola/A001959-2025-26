@@ -36,3 +36,9 @@ fun demoL19P2SELinuxContext(): List<String> {
         simulator.describeAccess("system_settings")
     )
 }
+
+fun main() {
+    println("=== SELinux Context ===")
+    val results = demoL19P2SELinuxContext()
+    results.forEach { println(it) }
+}

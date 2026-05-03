@@ -25,3 +25,9 @@ fun demoL16P3DataStoreSetup(): AppPreferencesP3 {
     dataStore.update { current -> current.copy(darkModeEnabled = true) }
     return dataStore.read()
 }
+
+fun main() {
+    println("=== DataStore Setup ===")
+    val result = demoL16P3DataStoreSetup()
+    println("Dark mode: ${result.darkModeEnabled}, Language: ${result.language}")
+}

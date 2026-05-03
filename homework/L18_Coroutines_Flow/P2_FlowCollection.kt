@@ -18,3 +18,9 @@ fun demoL18P2FlowCollection(): List<String> {
 
     return uiUpdates
 }
+
+fun main() {
+    println("=== Flow Collection ===")
+    val updates = demoL18P2FlowCollection()
+    updates.forEach { println(it) }
+}

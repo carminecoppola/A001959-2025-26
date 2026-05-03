@@ -19,3 +19,10 @@ class RetrofitBuilderSimulatorP1 {
 fun demoL17P1RetrofitSetup(): RetrofitConfigP1 {
     return RetrofitBuilderSimulatorP1().build("https://api.example.com/")
 }
+
+fun main() {
+    println("=== Retrofit Setup ===")
+    val config = demoL17P1RetrofitSetup()
+    println("Base URL: ${config.baseUrl}")
+    println("Converter: ${config.converterName}")
+}

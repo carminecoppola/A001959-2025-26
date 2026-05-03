@@ -26,3 +26,10 @@ fun demoL17P5JSONModelMapping(): UserUiModelP5 {
     val dto = UserDtoP5(1, "Luca", "luca@example.com")
     return UserMapperP5().toUiModel(dto)
 }
+
+fun main() {
+    println("=== JSON Model Mapping ===")
+    val uiModel = demoL17P5JSONModelMapping()
+    println("Display Name: ${uiModel.displayName}")
+    println("Contact: ${uiModel.contact}")
+}

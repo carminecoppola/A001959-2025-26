@@ -20,3 +20,10 @@ fun demoL17P2JSONParsing(): ArticleP2 {
     val json = """{"id": 7, "title": "Introduzione a Retrofit"}"""
     return JsonParserSimulatorP2().parseArticle(json)
 }
+
+fun main() {
+    println("=== JSON Parsing ===")
+    val article = demoL17P2JSONParsing()
+    println("ID: ${article.id}")
+    println("Title: ${article.title}")
+}

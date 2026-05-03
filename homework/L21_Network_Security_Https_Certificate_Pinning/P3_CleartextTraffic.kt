@@ -23,3 +23,9 @@ fun demoL21P3CleartextTraffic(): List<String> {
         policy.describe("http://insecure.example.com")
     )
 }
+
+fun main() {
+    println("=== Cleartext Traffic ===")
+    val results = demoL21P3CleartextTraffic()
+    results.forEach { println(it) }
+}

@@ -16,9 +16,20 @@ class NoteDaoSimulatorP2(
     fun insert(note: NoteEntityP2) {
         notes.add(note)
     }
+
+    fun update(note: NoteEntityP2) {
+        val index = notes.indexOfFirst { it.id == note.id }
+        if (index != -1) {
+            notes[index] = note
+        }
+    }
+
+    fun delete(id: Int) {
+        notes.removeAll { it.id == id }
+    }
 }
 
-// Caso d'uso di base: eseguiamo una query e aggiungiamo un nuovo record.
+// Caso d'uso di base: eseguiamo tutte le operazioni CRUD (Create, Read, Update, Delete).
 fun demoP2DaoQueries(): List<String> {
     val dao = NoteDaoSimulatorP2(
         mutableListOf(
@@ -27,7 +38,31 @@ fun demoP2DaoQueries(): List<String> {
         )
     )
 
-    dao.insert(NoteEntityP2(3, "Terza nota"))
+    val output = mutableListOf<String>()
 
-    return dao.getAllNotes().map { note -> "${note.id}: ${note.text}" }
+    // READ: leggiamo tutte le note
+    output.add("--- READ (Tutte le note) ---")
+    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+
+    // CREATE: inseriamo una nuova nota
+    output.add("\n--- CREATE (Inserisci nota 3) ---")
+    dao.insert(NoteEntityP2(3, "Terza nota"))
+    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+
+    // UPDATE: aggiorniamo una nota
+    output.add("\n--- UPDATE (Aggiorna nota 2) ---")
+    dao.update(NoteEntityP2(2, "Seconda nota MODIFICATA"))
+    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+
+    // DELETE: eliminiamo una nota
+    output.add("\n--- DELETE (Elimina nota 1) ---")
+    dao.delete(1)
+    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+
+    return output
+}
+
+fun main() {
+    val results = demoP2DaoQueries()
+    results.forEach { println(it) }
 }

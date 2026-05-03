@@ -35,3 +35,9 @@ fun demoL19P3AppSandbox(): List<String> {
         "File nella sandbox: ${sandbox.listFiles().joinToString()}"
     )
 }
+
+fun main() {
+    println("=== App Sandbox ===")
+    val results = demoL19P3AppSandbox()
+    results.forEach { println(it) }
+}

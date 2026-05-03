@@ -53,3 +53,8 @@ fun demoP4GridLayout(): List<String> {
     val gridManager = GridLayoutManagerSimulatorP4(GridLayoutConfigP4(spanCount = 2))
     return gridManager.renderGrid(items)
 }
+
+fun main() {
+    val results = demoP4GridLayout()
+    results.forEach { println(it) }
+}

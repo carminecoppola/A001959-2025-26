@@ -26,3 +26,8 @@ fun demoL16P2EncryptedSharedPreferences(): String {
     prefs.putSecureString("token", "abc123")
     return prefs.getSecureString("token")
 }
+
+fun main() {
+    println("=== EncryptedSharedPreferences ===")
+    println("Token salvato: ${demoL16P2EncryptedSharedPreferences()}")
+}

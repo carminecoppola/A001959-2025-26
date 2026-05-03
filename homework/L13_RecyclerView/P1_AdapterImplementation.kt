@@ -62,3 +62,8 @@ fun demoP1AdapterImplementation(): List<String> {
     val adapter = SimpleRecyclerViewAdapterP1(sampleItems)
     return adapter.renderAllItems()
 }
+
+fun main() {
+    val results = demoP1AdapterImplementation()
+    results.forEach { println(it) }
+}

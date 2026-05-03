@@ -33,3 +33,8 @@ fun demoP4RepositoryPattern(): List<String> {
     val repository = UserRepositoryP4(UserLocalDataSourceP4())
     return repository.loadUserNames()
 }
+
+fun main() {
+    val results = demoP4RepositoryPattern()
+    results.forEach { println(it) }
+}

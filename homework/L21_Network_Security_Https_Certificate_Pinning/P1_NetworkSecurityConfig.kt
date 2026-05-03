@@ -24,3 +24,9 @@ fun demoL21P1NetworkSecurityConfig(): List<String> {
         simulator.validate(NetworkSecurityPolicyP1(enforceHttps = false, allowCleartext = true))
     )
 }
+
+fun main() {
+    println("=== Network Security Config ===")
+    val results = demoL21P1NetworkSecurityConfig()
+    results.forEach { println(it) }
+}

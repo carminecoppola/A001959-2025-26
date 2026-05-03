@@ -42,3 +42,8 @@ fun demoP5ClickListenerPattern(): List<String> {
         adapter.click(10)
     )
 }
+
+fun main() {
+    val results = demoP5ClickListenerPattern()
+    results.forEach { println(it) }
+}

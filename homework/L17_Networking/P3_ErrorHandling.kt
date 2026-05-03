@@ -27,3 +27,14 @@ fun demoL17P3ErrorHandling(): List<NetworkResultP3<String>> {
         client.fetchData(shouldFail = true)
     )
 }
+
+fun main() {
+    println("=== Error Handling ===")
+    val results = demoL17P3ErrorHandling()
+    results.forEach { result ->
+        when (result) {
+            is NetworkResultP3.Success -> println("✓ Success: ${result.data}")
+            is NetworkResultP3.Error -> println("✗ Error: ${result.message}")
+        }
+    }
+}

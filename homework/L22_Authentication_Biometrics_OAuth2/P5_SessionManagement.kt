@@ -32,3 +32,10 @@ fun demoL22P5SessionManagement(): List<Boolean> {
     val validLater = manager.isSessionValid(nowMinutes = 50)
     return listOf(validNow, validLater)
 }
+
+fun main() {
+    println("=== Session Management ===")
+    val results = demoL22P5SessionManagement()
+    println("Sessione valida adesso: ${results[0]}")
+    println("Sessione valida dopo: ${results[1]}")
+}

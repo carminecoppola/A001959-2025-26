@@ -28,3 +28,9 @@ fun demoL20P1KeystoreSetup(): List<String> {
         "Presente nel keystore: ${keystore.hasKey(key.alias)}"
     )
 }
+
+fun main() {
+    println("=== Keystore Setup ===")
+    val results = demoL20P1KeystoreSetup()
+    results.forEach { println(it) }
+}

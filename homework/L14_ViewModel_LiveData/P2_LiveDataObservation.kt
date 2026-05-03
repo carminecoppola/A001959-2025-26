@@ -32,3 +32,8 @@ fun demoP2LiveDataObservation(): List<String> {
 
     return receivedValues
 }
+
+fun main() {
+    val results = demoP2LiveDataObservation()
+    results.forEach { println(it) }
+}

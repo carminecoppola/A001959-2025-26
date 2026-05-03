@@ -31,3 +31,8 @@ fun demoP1ViewModelClass(): List<UiStateP1> {
         viewModel.increment()
     )
 }
+
+fun main() {
+    val results = demoP1ViewModelClass()
+    results.forEach { println(it) }
+}

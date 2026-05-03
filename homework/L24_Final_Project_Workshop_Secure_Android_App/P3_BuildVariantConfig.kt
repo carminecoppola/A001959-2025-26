@@ -30,3 +30,9 @@ fun demoL24P3BuildVariantConfig(): List<BuildVariantConfigP3> {
     val simulator = BuildVariantSimulatorP3()
     return listOf(simulator.debug(), simulator.release())
 }
+
+fun main() {
+    println("=== Build Variant Config ===")
+    val variants = demoL24P3BuildVariantConfig()
+    variants.forEach { println(it) }
+}

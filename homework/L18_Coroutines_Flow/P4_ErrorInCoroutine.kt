@@ -27,3 +27,14 @@ fun demoL18P4ErrorInCoroutine(): List<CoroutineResultP4<String>> {
         handler.runOperation(shouldFail = true)
     )
 }
+
+fun main() {
+    println("=== Error in Coroutine ===")
+    val results = demoL18P4ErrorInCoroutine()
+    results.forEach { result ->
+        when (result) {
+            is CoroutineResultP4.Success -> println("✓ ${result.data}")
+            is CoroutineResultP4.Failure -> println("✗ ${result.message}")
+        }
+    }
+}

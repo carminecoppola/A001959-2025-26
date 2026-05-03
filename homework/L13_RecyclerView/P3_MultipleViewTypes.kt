@@ -70,3 +70,8 @@ fun demoP3MultipleViewTypes(): List<String> {
     val adapter = MultipleViewTypesAdapterP3(feedItems)
     return adapter.renderFeed()
 }
+
+fun main() {
+    val results = demoP3MultipleViewTypes()
+    results.forEach { println(it) }
+}

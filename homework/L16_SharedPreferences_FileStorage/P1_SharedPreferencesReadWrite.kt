@@ -25,3 +25,8 @@ class SharedPreferencesSimulatorP1 {
 fun demoL16P1SharedPreferencesReadWrite(): String {
     return SharedPreferencesSimulatorP1().saveAndReadExample()
 }
+
+fun main() {
+    println("=== SharedPreferences Read/Write ===")
+    println(demoL16P1SharedPreferencesReadWrite())
+}

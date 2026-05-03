@@ -10,6 +10,14 @@ class ProGuardRulesSimulatorP3 {
         )
     }
 
+    fun obfuscate(className: String): String {
+        return when (className) {
+            "SecureDataManager" -> "SDM"
+            "UserRepository" -> "UR"
+            else -> className.take(3).uppercase()
+        }
+    }
+
     fun describe(): String {
         return "Regole ProGuard base per proteggere modelli e dipendenze note"
     }
@@ -18,5 +26,16 @@ class ProGuardRulesSimulatorP3 {
 // Caso d'uso di base: leggiamo un set minimo di regole.
 fun demoL23P3ProGuardRules(): List<String> {
     val simulator = ProGuardRulesSimulatorP3()
-    return simulator.rules()
+    return listOf(
+        simulator.describe(),
+        "SecureDataManager -> ${simulator.obfuscate("SecureDataManager")}",
+        "UserRepository -> ${simulator.obfuscate("UserRepository")}",
+        simulator.rules().joinToString(separator = " | ")
+    )
+}
+
+fun main() {
+    println("=== ProGuard Rules ===")
+    val results = demoL23P3ProGuardRules()
+    results.forEach { println(it) }
 }

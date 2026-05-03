@@ -1,138 +1,48 @@
-# 📘 Kotlin Homework Repository
+# A001959-2025-26
 
-This repository contains a collection of Kotlin exercises organized by lesson folders:
+Repository didattico con esercizi Kotlin e progetti Android.
 
-* `L01_Homework`
-* `L02_Homework`
-* `L03_Homework`
-* `L04_Homework`
-* `L05_Homework`
-* ...
+## Struttura
 
-Each folder includes multiple `.kt` files, one per exercise, with:
+- `homework/`: esercizi Kotlin per lezioni (`L13`-`L24`), file `.kt` indipendenti.
+- `ta_exercises/`: esercizi guidati di supporto.
+- `textbook/`: progetti Android Studio dell'appendice del corso (`E01`-`E06`), ogni cartella e un progetto separato.
 
-* ✔ Correct implementations
-* ✔ Clear comments (problem description, logic explanation, edge cases)
-* ✔ Instructions to compile and run each file
+## Requisiti consigliati
 
----
+- Kotlin `2.3.21`
+- Java `17+`
+- Android Studio (per `textbook/`)
 
-## ⚙️ Kotlin Requirements
-
-* **Kotlin version:** 2.3.21 (tested)
-
-Check your installation:
+Verifica rapida:
 
 ```bash
 kotlinc -version
+java -version
 ```
 
----
-
-## 🚀 Recommended Setup (SDKMAN)
-
-The easiest way to manage Kotlin versions is using SDKMAN:
+## Esecuzione manuale di un esercizio Kotlin
 
 ```bash
-# initialize sdkman (if not already active)
-source ~/.sdkman/bin/sdkman-init.sh
-
-# install Kotlin (tested version)
-sdk install kotlin 2.3.21
-
-# use the tested version
-sdk use kotlin 2.3.21
-
-# verify installation
-kotlinc -version
+kotlinc homework/L13_RecyclerView/P1_AdapterImplementation.kt -include-runtime -d P1.jar
+java -jar P1.jar
 ```
 
-To enable SDKMAN automatically on every terminal session, add this line to your shell config (`~/.bashrc` or `~/.zshrc`):
+## Apertura progetti Android (`textbook`)
 
-```bash
-source "$HOME/.sdkman/bin/sdkman-init.sh"
+Apri direttamente una sottocartella `E0X_*` in Android Studio, per esempio:
+
+```text
+textbook/E02_Calculator
 ```
 
----
+Non aprire `textbook/` come progetto unico.
 
-## 🧰 Alternative: Manual Installation
+## Note
 
-```bash
-mkdir -p ~/kotlin-latest
-cd ~/kotlin-latest
+- La repository ora usa un solo README (questo file).
+- Script e report temporanei sono stati rimossi per mantenere la struttura pulita.
 
-curl -L https://github.com/JetBrains/kotlin/releases/latest/download/kotlin-compiler.zip -o kotlin.zip
-unzip kotlin.zip
+## Licenza
 
-# temporary PATH
-export PATH="$PATH:$HOME/kotlin-latest/kotlinc/bin"
-
-# add the export line to ~/.bashrc or ~/.zshrc for persistence
-```
-
----
-
-## ▶️ Compile and Run
-
-Each Kotlin file can be compiled and executed from the terminal:
-
-```bash
-kotlinc File.kt -include-runtime -d File.jar
-java -jar File.jar
-```
-
-Example:
-
-```bash
-kotlinc P1_BMICalculator.kt -include-runtime -d P1_BMICalculator.jar && java -jar P1_BMICalculator.jar
-```
-
-Some exercises that require input can also be tested with:
-
-```bash
-printf "input1\ninput2\n" | java -jar File.jar
-```
-
----
-
-## ⚠️ Compatibility Notes
-
-Some solutions use modern Kotlin features, such as:
-
-* `sumOf`
-* `maxOrNull`, `minOrNull`
-* `uppercase()`, `lowercase()`
-
-If you are using an older Kotlin version, you may need to adapt:
-
-| New Function    | Older Alternative   |
-| --------------- | ------------------- |
-| `sumOf { ... }` | `map { ... }.sum()` |
-| `maxOrNull()`   | `max()`             |
-| `minOrNull()`   | `min()`             |
-| `uppercase()`   | `toUpperCase()`     |
-| `lowercase()`   | `toLowerCase()`     |
-
----
-
-## 🧠 Notes
-
-* Code is intentionally kept close to the provided solutions
-* Edge cases are documented but not always handled explicitly (to match assignment requirements)
-* Each file is self-contained and independently executable
-
----
-
-## 🏁 Goal
-
-The goal of this repository is to:
-
-* Practice Kotlin fundamentals
-* Understand core programming concepts
-* Build clean, readable, and maintainable code
-
----
-
-## 📄 License
-
-This repository is for educational purposes.
+Materiale per uso didattico.

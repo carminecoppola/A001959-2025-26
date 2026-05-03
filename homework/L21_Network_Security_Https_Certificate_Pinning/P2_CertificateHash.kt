@@ -21,3 +21,10 @@ fun demoL21P2CertificateHash(): List<String> {
         "Hash valido: ${simulator.matchesExpected(certData, hash)}"
     )
 }
+
+fun main() {
+    println("=== Certificate Hash ===")
+    val results = demoL21P2CertificateHash()
+    println("Calcolato: ${results[0]}")
+    println(results[1])
+}

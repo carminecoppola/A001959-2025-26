@@ -23,3 +23,12 @@ fun demoL16P4InternalFileWrite(baseDirectory: File): String {
     storage.writeFile("notes.txt", "Prima nota salvata nel file interno")
     return storage.readFile("notes.txt")
 }
+
+fun main() {
+    println("=== Internal File Write ===")
+    val tempDir = File(System.getProperty("java.io.tmpdir"), "L16_test")
+    tempDir.mkdirs()
+    val result = demoL16P4InternalFileWrite(tempDir)
+    println(result)
+    println("File salvato in: ${tempDir.absolutePath}")
+}

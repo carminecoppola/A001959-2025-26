@@ -26,3 +26,11 @@ fun demoL16P5BackupPolicy(): Map<String, String> {
 
     return BackupPolicySimulatorP5().buildBackupPayload(entries)
 }
+
+fun main() {
+    println("=== Backup Policy ===")
+    val backup = demoL16P5BackupPolicy()
+    println("Dati nel backup:")
+    backup.forEach { (key, value) -> println("  $key: $value") }
+    println("\nNota: 'token' è escluso dal backup (allowBackup=false)")
+}

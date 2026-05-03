@@ -30,3 +30,9 @@ fun demoL20P5AntiPatternsQuiz(): List<String> {
     val quiz = SecurityAntiPatternsQuizP5()
     return quiz.runQuiz(listOf("SharedPreferences", "allowBackup", "Logger"))
 }
+
+fun main() {
+    println("=== Security Anti-Patterns Quiz ===")
+    val results = demoL20P5AntiPatternsQuiz()
+    results.forEach { println(it) }
+}

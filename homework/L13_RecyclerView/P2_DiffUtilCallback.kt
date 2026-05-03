@@ -72,3 +72,8 @@ fun demoP2DiffUtilCallback(): List<String> {
     val callback = SimpleDiffUtilCallbackP2(oldList, newList)
     return callback.calculateChanges()
 }
+
+fun main() {
+    val results = demoP2DiffUtilCallback()
+    results.forEach { println(it) }
+}

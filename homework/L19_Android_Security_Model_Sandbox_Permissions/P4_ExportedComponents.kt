@@ -29,3 +29,9 @@ fun demoL19P4ExportedComponents(): List<String> {
         policy.explain(ExportedComponentP4("ShareReceiver", exported = true, requiresPermission = true))
     )
 }
+
+fun main() {
+    println("=== Exported Components ===")
+    val results = demoL19P4ExportedComponents()
+    results.forEach { println(it) }
+}

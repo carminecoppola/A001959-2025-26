@@ -23,3 +23,11 @@ fun demoL20P3EncryptedFile(directory: File): String {
     encryptedFile.writeEncryptedFile("secure.txt", "contenuto protetto")
     return encryptedFile.readEncryptedFile("secure.txt")
 }
+
+fun main() {
+    println("=== Encrypted File ===")
+    val tempDir = File(System.getProperty("java.io.tmpdir"), "L20_encrypted")
+    tempDir.mkdirs()
+    val result = demoL20P3EncryptedFile(tempDir)
+    println("Contenuto decifrato: $result")
+}

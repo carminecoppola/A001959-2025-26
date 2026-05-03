@@ -31,3 +31,9 @@ fun demoL21P4BackupPin(): List<String> {
         pinning.describe("pin-evil")
     )
 }
+
+fun main() {
+    println("=== Backup Pin ===")
+    val results = demoL21P4BackupPin()
+    results.forEach { println(it) }
+}

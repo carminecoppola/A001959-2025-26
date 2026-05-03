@@ -27,3 +27,9 @@ fun demoP3TypeConverters(): List<String> {
 
     return listOf(serialized, "${restored.city} - ${restored.street}")
 }
+
+fun main() {
+    val results = demoP3TypeConverters()
+    println("Serializzato: ${results[0]}")
+    println("Ripristinato: ${results[1]}")
+}

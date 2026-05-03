@@ -41,3 +41,8 @@ fun demoP3MVVMLayers(): String {
 
     return view.render(viewModel.loadProducts())
 }
+
+fun main() {
+    val result = demoP3MVVMLayers()
+    println(result)
+}

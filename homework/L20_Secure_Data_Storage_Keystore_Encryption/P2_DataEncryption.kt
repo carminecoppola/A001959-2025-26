@@ -22,3 +22,10 @@ fun demoL20P2DataEncryption(): List<String> {
     val plain = encryption.decryptData(cipher)
     return listOf(cipher, plain)
 }
+
+fun main() {
+    println("=== Data Encryption ===")
+    val results = demoL20P2DataEncryption()
+    println("Ciphertext: ${results[0]}")
+    println("Plaintext: ${results[1]}")
+}
