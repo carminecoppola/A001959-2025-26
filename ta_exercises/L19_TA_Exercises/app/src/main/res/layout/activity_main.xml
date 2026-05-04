@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    The root layout is a ConstraintLayout.
+    It allows flexible positioning while keeping the view hierarchy relatively flat.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <!--
+        This LinearLayout groups the educational content vertically.
+        It is centered inside the ConstraintLayout for readability.
+    -->
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintWidth_percent="0.90"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!--
+            Title of the demonstration.
+        -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Android Security Model"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="24dp" />
+
+        <!--
+            Subtitle clarifying the specific concept demonstrated by the app.
+        -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Runtime Permission Demo"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="24dp" />
+
+        <!--
+            This button starts the runtime permission flow.
+        -->
+        <Button
+            android:id="@+id/btnCheckPermission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check CAMERA Permission"
+            android:layout_marginBottom="24dp" />
+
+        <!--
+            This TextView displays the current permission state.
+        -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Permission status not checked yet."
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <!--
+            This TextView provides an academic explanation of the result.
+        -->
+        <TextView
+            android:id="@+id/tvExplanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Press the button to check and request the CAMERA permission."
+            android:textSize="16sp"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
