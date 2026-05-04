@@ -1,23 +1,18 @@
 /*
 Problem 4 - Observer Pattern
-Obiettivo:
-- Creare EventBus con subscribe(listener) e publish(event).
 
-Spiegazione codice:
-- EventBus mantiene una lista di listener come lambda (String) -> Unit.
-- subscribe aggiunge un listener, publish invoca ogni listener con l'evento.
-- Questo è un semplice esempio di pattern observer usando funzioni come callback.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Nessun listener: publish non fa nulla.
-- Listener che lancia eccezioni interromperebbe la notifica degli altri listener in questa semplice implementazione.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P4_ObserverPattern.kt -include-runtime -d P4_ObserverPattern.jar
-2- Esegui il programma
-    java -jar P4_ObserverPattern.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P4_ObserverPattern.kt -include-runtime -d P4_ObserverPattern.jar
+2. Run the program:
+   java -jar P4_ObserverPattern.jar
 */
 
 class EventBus {

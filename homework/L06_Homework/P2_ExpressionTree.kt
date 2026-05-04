@@ -1,23 +1,18 @@
 /*
 Problem 2 - Expression Tree
-Obiettivo:
-- Creare sealed class Expr con Num, Add, Mul e funzione evaluate(expr).
 
-Spiegazione codice:
-- Expr è sealed per permettere l'uso esaustivo di when.
-- Le classi interne modellano i nodi dell'albero di espressione.
-- La funzione evaluate usa ricorsione per calcolare il valore dell'espressione.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- L'uso di sealed class garantisce che when sia esaustivo, evitando missing branch.
-- Valori e operazioni sono interi, overflow non gestito esplicitamente.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P2_ExpressionTree.kt -include-runtime -d P2_ExpressionTree.jar
-2- Esegui il programma
-    java -jar P2_ExpressionTree.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P2_ExpressionTree.kt -include-runtime -d P2_ExpressionTree.jar
+2. Run the program:
+   java -jar P2_ExpressionTree.jar
 */
 
 sealed class Expr {

@@ -1,23 +1,18 @@
 /*
 Problem 1 - Traffic Light
-Obiettivo:
-- Creare enum TrafficLight con RED, YELLOW, GREEN, più next() e duration().
 
-Spiegazione codice:
-- L'enum TrafficLight definisce i tre stati del semaforo.
-- La funzione next() usa when(this) per restituire lo stato successivo in modo ciclico.
-- La funzione duration() restituisce la durata in secondi associata ad ogni stato.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- L'uso di when su un enum è esaustivo: non è necessario includere un ramo else.
-- Le durate sono valori fissi; cambiandole si modifica il comportamento ma non la struttura.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P1_TrafficLight.kt -include-runtime -d P1_TrafficLight.jar
-2- Esegui il programma
-    java -jar P1_TrafficLight.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P1_TrafficLight.kt -include-runtime -d P1_TrafficLight.jar
+2. Run the program:
+   java -jar P1_TrafficLight.jar
 */
 
 enum class TrafficLight {

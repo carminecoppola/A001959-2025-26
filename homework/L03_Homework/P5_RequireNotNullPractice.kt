@@ -1,27 +1,18 @@
 /*
 Problem 5 - requireNotNull Practice
-Obiettivo:
-- Validare una Map<String, String?> leggendo host, port e apiKey.
-- Se uno di questi valori è null, generare un errore con messaggio chiaro.
 
-Spiegazione codice:
-- requireNotNull controlla che il valore letto dalla mappa non sia null.
-- Se il valore è null, viene lanciata un'eccezione con il messaggio fornito nel lambda.
-- Questo è utile quando un campo è obbligatorio e non si vuole proseguire con dati incompleti.
-- Nel main viene passata una configurazione valida per mostrare il caso corretto.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- host null: viene generato l'errore "host is required".
-- port null: viene generato l'errore "port is required".
-- apiKey null: viene generato l'errore "apiKey is required".
-- La funzione accetta String? perché la mappa può contenere valori mancanti.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come compilare ed eseguire:
-1- Compila il file
-    kotlinc P5_RequireNotNullPractice.kt -include-runtime -d P5_RequireNotNullPractice.jar
-2- Esegui il programma
-    java -jar P5_RequireNotNullPractice.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P5_RequireNotNullPractice.kt -include-runtime -d P5_RequireNotNullPractice.jar
+2. Run the program:
+   java -jar P5_RequireNotNullPractice.jar
 */
 
 fun validateConfig(config: Map<String, String?>) {

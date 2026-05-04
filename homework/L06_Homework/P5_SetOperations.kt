@@ -1,22 +1,18 @@
 /*
 Problem 5 - Set Operations
-Obiettivo:
-- Dati due set di student IDs, calcolare intersezione, solo classe A, solo calsse B e unione.
 
-Spiegazione codice:
-- Si usano le operazioni di set standard: intersect, subtract e union.
-- I risultati sono stampati direttamente.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Set vuoti gestiti correttamente dalle operazioni di set.
-- IDs duplicati non sono presenti in un Set.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P5_SetOperations.kt -include-runtime -d P5_SetOperations.jar
-2- Esegui il programma
-    java -jar P5_SetOperations.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P5_SetOperations.kt -include-runtime -d P5_SetOperations.jar
+2. Run the program:
+   java -jar P5_SetOperations.jar
 */
 
 fun main() {

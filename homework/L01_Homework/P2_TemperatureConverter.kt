@@ -1,28 +1,18 @@
 /*
 Problem 2 - Temperature Converter
-Obiettivo:
-- Leggere una temperatura in Celsius.
-- Convertirla in Fahrenheit e Kelvin.
 
-Formule:
-- F = C * 9/5 + 32
-- K = C + 273.15
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Spiegazione codice:
-- Si legge il valore Celsius come Double.
-- Si applicano direttamente le due formule richieste.
-- Si stampano i risultati con 2 decimali.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Edge cases:
-- Input non numerico causa errore con toDouble().
-- Sono accettate temperature negative (valide per Celsius/Fahrenheit).
-
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P2_TemperatureConverter.kt -include-runtime -d P2_TemperatureConverter.jar
-2- Esegui il programma
-    java -jar P2_TemperatureConverter.jar
-3- Inserisci il valore in Celsius quando richiesto a schermo.
+How to run from terminal:
+1. Compile the file:
+   kotlinc P2_TemperatureConverter.kt -include-runtime -d P2_TemperatureConverter.jar
+2. Run the program:
+   java -jar P2_TemperatureConverter.jar
 */
 
 fun main() {

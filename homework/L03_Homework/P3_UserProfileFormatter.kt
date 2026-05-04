@@ -1,26 +1,18 @@
 /*
 Problem 3 - User Profile Formatter
-Obiettivo:
-- Creare una funzione che formatta i dati di un utente.
-- Sostituire i valori null con "N/A".
 
-Spiegazione codice:
-- La data class User modella i dati del profilo con bio e website nullable.
-- La funzione format usa l'Elvis operator ?: per sostituire i null con "N/A".
-- Il risultato è una stringa leggibile con nome, bio e sito web.
-- Nel main si mostra un esempio con bio nulla.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- bio null: viene stampato "N/A".
-- website null: viene stampato "N/A".
-- name non è nullable, quindi viene sempre stampato come valore presente.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come compilare ed eseguire:
-1- Compila il file
-    kotlinc P3_UserProfileFormatter.kt -include-runtime -d P3_UserProfileFormatter.jar
-2- Esegui il programma
-    java -jar P3_UserProfileFormatter.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P3_UserProfileFormatter.kt -include-runtime -d P3_UserProfileFormatter.jar
+2. Run the program:
+   java -jar P3_UserProfileFormatter.jar
 */
 
 data class User(val name: String, val bio: String?, val website: String?)

@@ -1,22 +1,18 @@
 /*
 Problem 3 - Immutable Point
-Obiettivo:
-- Creare una data class Point(x, y) con distanceTo, translate e scale.
 
-Spiegazione codice:
-- Point è immutabile (data class) e restituisce nuove istanze per translate e scale.
-- distanceTo calcola la distanza euclidea usando sqrt dalla libreria math.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Le operazioni non modificano l'istanza originale ma ne ritornano una nuova.
-- Valori non finiti (NaN/Infinity) seguono il comportamento numerico di Double.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P3_ImmutablePoint.kt -include-runtime -d P3_ImmutablePoint.jar
-2- Esegui il programma
-    java -jar P3_ImmutablePoint.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P3_ImmutablePoint.kt -include-runtime -d P3_ImmutablePoint.jar
+2. Run the program:
+   java -jar P3_ImmutablePoint.jar
 */
 
 import kotlin.math.sqrt

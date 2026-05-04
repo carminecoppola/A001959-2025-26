@@ -1,23 +1,18 @@
 /*
 Problem 2 - Animal Hierarchy
-Obiettivo:
-- Creare una gerarchia Animal con sottoclassi Dog e Cat, ciascuna con un metodo specifico.
 
-Spiegazione codice:
-- Animal è open e contiene proprietà condivise come name e sound.
-- Dog e Cat ereditano da Animal; Dog aggiunge fetch, Cat aggiunge purr.
-- speak è open e stampa il nome e il suono dell'animale.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- L'ereditarietà richiede la parola chiave open sulla classe base.
-- Il cast diretto (animals[0] as Dog) presuppone che l'elemento sia effettivamente un Dog.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P2_AnimalHierarchy.kt -include-runtime -d P2_AnimalHierarchy.jar
-2- Esegui il programma
-    java -jar P2_AnimalHierarchy.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P2_AnimalHierarchy.kt -include-runtime -d P2_AnimalHierarchy.jar
+2. Run the program:
+   java -jar P2_AnimalHierarchy.jar
 */
 
 

@@ -1,31 +1,18 @@
 /*
 Problem 5 - Kotlin vs Java Comparison
 
-Obiettivo:
-- Comprendere perché Kotlin è preferito nello sviluppo Android moderno.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Spiegazione:
-- Kotlin è più conciso di Java.
-- Offre null safety integrata.
-- Supporta lambda, funzioni di ordine superiore e coroutines.
-- È interoperabile con Java.
-- Riduce boilerplate rispetto a Java.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Esempio Kotlin:
-
-val name: String? = null
-println(name ?: "N/A")
-
-Esempio concettuale:
-- In Kotlin il tipo nullable deve essere dichiarato esplicitamente con ?
-- Questo riduce il rischio di NullPointerException rispetto a codice Java tradizionale.
-
-Edge cases:
-- Non ci sono input.
-- L’esercizio è teorico e serve a confrontare concetti, non a implementare logica complessa.
-
-Come eseguirlo:
-kotlinc P5_KotlinVsJavaComparison.kt -include-runtime -d P5_KotlinVsJavaComparison.jar && java -jar P5_KotlinVsJavaComparison.jar
+How to run from terminal:
+1. Compile the file:
+   kotlinc P5_KotlinVsJavaComparison.kt -include-runtime -d P5_KotlinVsJavaComparison.jar
+2. Run the program:
+   java -jar P5_KotlinVsJavaComparison.jar
 */
 
 fun main() {

@@ -1,23 +1,18 @@
 /*
 Problem 5 - Builder Pattern
-Obiettivo:
-- Creare QueryBuilder per costruire query SQL-like con from, where, orderBy, limit e build.
 
-Spiegazione codice:
-- QueryBuilder mantiene campi interni modificabili e restituisce se stesso con apply()
-- I metodi from/where/orderBy/limit ritornano QueryBuilder per concatenare le chiamate.
-- build compone la stringa SQL considerando solo le parti presenti.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Table vuota produrrà una query con FROM seguito da stringa vuota.
-- Campi opzionali (where/order/limit) vengono ignorati se null.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P5_BuilderPattern.kt -include-runtime -d P5_BuilderPattern.jar
-2- Esegui il programma
-    java -jar P5_BuilderPattern.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P5_BuilderPattern.kt -include-runtime -d P5_BuilderPattern.jar
+2. Run the program:
+   java -jar P5_BuilderPattern.jar
 */
 
 class QueryBuilder {

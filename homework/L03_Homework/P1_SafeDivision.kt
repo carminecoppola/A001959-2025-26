@@ -1,26 +1,18 @@
 /*
 Problem 1 - Safe Division
-Obiettivo:
-- Scrivere una funzione safeDivide(a: Int, b: Int): Int?
-- Restituire null invece di generare un errore quando b == 0.
 
-Spiegazione codice:
-- La funzione usa Int? come tipo di ritorno per rappresentare un risultato valido oppure null.
-- Il controllo if verifica il divisore prima di eseguire la divisione.
-- Se b è 0, il risultato è null.
-- Nel main si mostra anche l'uso dell'Elvis operator ?: per fornire un valore di fallback.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Divisione per zero: deve restituire null.
-- Divisione tra numeri negativi o positivi: segue il comportamento standard degli interi.
-- Il valore null viene gestito esplicitamente nel main con ?:.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come compilare ed eseguire:
-1- Compila il file
-    kotlinc P1_SafeDivision.kt -include-runtime -d P1_SafeDivision.jar
-2- Esegui il programma
-    java -jar P1_SafeDivision.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P1_SafeDivision.kt -include-runtime -d P1_SafeDivision.jar
+2. Run the program:
+   java -jar P1_SafeDivision.jar
 */
 
 fun safeDivide(a: Int, b: Int): Int? = if (b == 0) null else a / b

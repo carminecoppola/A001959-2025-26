@@ -1,28 +1,18 @@
 /*
 Problem 2 - Retry Logic
-Obiettivo:
-- Scrivere una funzione suspend `withRetry` che ritenta un blocco più volte prima di fallire definitivamente.
 
-Spiegazione codice:
-- `withRetry` incapsula la gestione errori e memorizza l'ultima eccezione.
-- Il `repeat(times)` controlla i tentativi.
-- `runBlocking` permette di chiamare la `suspend function` da `main`.
-- Il blocco di esempio simula un errore che si risolve dopo alcuni tentativi.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- `times <= 0` porterebbe a nessun tentativo utile e poi a fallimento con `lastException!!`.
-- Un retry infinito sarebbe pericoloso perché può bloccare risorse e mascherare errori.
-- Se il blocco lancia eccezioni diverse da `Exception` non vengono intercettate da questo codice.
-- Se il blocco ha effetti collaterali, ogni retry li ripete.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale con coroutines:
-1. Scaricare la libreria:
-    curl -L https://repo1.maven.org/maven2/org/jetbrains/kotlinx/kotlinx-coroutines-core-jvm/1.7.3/kotlinx-coroutines-core-jvm-1.7.3.jar -o coroutines.jar
-2. Compilare:
-    kotlinc P2_RetryLogic.kt -cp coroutines.jar -include-runtime -d P2_RetryLogic.jar
-3. Eseguire:
-    java -cp "P2_RetryLogic.jar:coroutines.jar" P2_RetryLogicKt
-
+How to run from terminal:
+1. Compile the file:
+   kotlinc P2_RetryLogic.kt -include-runtime -d P2_RetryLogic.jar
+2. Run the program:
+   java -jar P2_RetryLogic.jar
 */
 
 import kotlinx.coroutines.*

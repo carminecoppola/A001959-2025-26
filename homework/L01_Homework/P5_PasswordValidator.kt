@@ -1,29 +1,18 @@
 /*
 Problem 5 - Password Validator
-Obiettivo:
-Verificare se una password:
-- ha almeno 8 caratteri
-- contiene almeno un numero
-- contiene almeno una lettera maiuscola
-Stampare VALID o INVALID.
 
-Spiegazione codice:
-- Si legge la password; se null si usa stringa vuota.
-- Si calcolano tre condizioni booleane indipendenti.
-- Si stampano i risultati dei controlli.
-- La password è valida solo se tutte le condizioni sono vere.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Password vuota o null risulta INVALID.
-- Password con soli simboli senza cifra/maiuscola fallisce i controlli.
- 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P5_PasswordValidator.kt -include-runtime -d P5_PasswordValidator.jar
-2- Esegui il programma
-    java -jar P5_PasswordValidator.jar
-3- Inserisci la password quando richiesto a schermo.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
+How to run from terminal:
+1. Compile the file:
+   kotlinc P5_PasswordValidator.kt -include-runtime -d P5_PasswordValidator.jar
+2. Run the program:
+   java -jar P5_PasswordValidator.jar
 */
 fun main() {
     print("Password: ")

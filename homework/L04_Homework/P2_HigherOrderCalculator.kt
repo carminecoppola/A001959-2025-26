@@ -1,26 +1,18 @@
 /*
 Problem 2 - Higher-Order Calculator
-Obiettivo:
-- Scrivere fun calculate(a: Double, b: Double, op: (Double, Double) -> Double): Double.
-- Creare lambda per somma, sottrazione, moltiplicazione e divisione.
 
-Spiegazione codice:
-- La funzione calculate riceve una higher-order function come parametro.
-- La lambda op definisce l'operazione da eseguire tra due numeri.
-- Questo rende la logica riutilizzabile senza duplicare codice per ogni operazione.
-- Il main mostra l'uso di lambda per addizione e moltiplicazione.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- La funzione non valida il divisore perché la logica richiesta lascia il controllo alla lambda.
-- I numeri sono Double, quindi supportano valori decimali.
-- Le lambda possono essere sostituite facilmente con altre operazioni compatibili.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come compilare ed eseguire:
-1- Compila il file
-    kotlinc P2_HigherOrderCalculator.kt -include-runtime -d P2_HigherOrderCalculator.jar
-2- Esegui il programma
-    java -jar P2_HigherOrderCalculator.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P2_HigherOrderCalculator.kt -include-runtime -d P2_HigherOrderCalculator.jar
+2. Run the program:
+   java -jar P2_HigherOrderCalculator.jar
 */
 
 fun calculate(a: Double, b: Double, op: (Double, Double) -> Double) = op(a, b)

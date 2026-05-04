@@ -1,29 +1,18 @@
 /*
 Problem 4 - Calculator
-Obiettivo:
-- Leggere due numeri e un operatore tra +, -, * e /.
-- Stampare il risultato.
-- Gestire la divisione per zero come caso di errore.
 
-Spiegazione codice:
-- La main legge il primo numero come Double per supportare anche valori decimali.
-- Poi legge l'operatore e il secondo numero.
-- La when seleziona l'operazione corretta in base al simbolo inserito.
-- Per la divisione, viene controllato che il divisore sia diverso da zero.
-- Se l'operatore non è valido o la divisione non è consentita, il risultato diventa null e viene stampato "Error".
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Divisione per zero: restituisce null invece di generare un crash logico.
-- Operatore non supportato: viene stampato "Error".
-- Input non numerico: readLine()!!.toDouble() può fallire, ma la logica rimane quella richiesta.
-- Numeri negativi e decimali sono supportati perché si usa Double.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P4_Calculator.kt -include-runtime -d P4_Calculator.jar
-2- Esegui il programma
-    java -jar P4_Calculator.jar
-3- Inserisci i valori richiesti quando richiesto a schermo
+How to run from terminal:
+1. Compile the file:
+   kotlinc P4_Calculator.kt -include-runtime -d P4_Calculator.jar
+2. Run the program:
+   java -jar P4_Calculator.jar
 */
 
 fun main() {

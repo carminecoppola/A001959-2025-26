@@ -1,26 +1,18 @@
 /*
 Problem 3 - Function Composition
-Obiettivo:
-- Scrivere fun compose(f: (Int) -> Int, g: (Int) -> Int): (Int) -> Int.
-- La funzione ritornata deve applicare prima g e poi f.
 
-Spiegazione codice:
-- compose restituisce una nuova funzione costruita con una lambda.
-- La lambda interna riceve x, applica prima g(x) e poi f sul risultato.
-- Questo è un esempio di composizione funzionale riutilizzabile.
-- Il main mostra la composizione tra double e addOne.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Le funzioni passate a compose devono accettare e restituire Int.
-- L'ordine è importante: prima g, poi f.
-- Se le funzioni hanno effetti collaterali, anche la funzione composta li eredita.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come compilare ed eseguire:
-1- Compila il file
-    kotlinc P3_FunctionComposition.kt -include-runtime -d P3_FunctionComposition.jar
-2- Esegui il programma
-    java -jar P3_FunctionComposition.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P3_FunctionComposition.kt -include-runtime -d P3_FunctionComposition.jar
+2. Run the program:
+   java -jar P3_FunctionComposition.jar
 */
 
 fun compose(f: (Int)->Int, g: (Int)->Int): (Int)->Int = { x -> f(g(x)) }

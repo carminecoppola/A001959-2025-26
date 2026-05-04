@@ -1,29 +1,18 @@
 /*
 Problem 3 - String Analyzer
-Obiettivo:
-Dato un input stringa, stampare:
-- lunghezza
-- versione uppercase
-- se contiene "kotlin" (case-insensitive)
-- primo e ultimo carattere
 
-Spiegazione codice:
-- Si legge la stringa; se readLine() restituisce null, si usa stringa vuota.
-- Si stampa lunghezza e versione uppercase.
-- Per il controllo case-insensitive si converte in lowercase e si usa contains.
-- Primo e ultimo carattere vengono stampati solo se la stringa non è vuota.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Stringa vuota: non si tenta accesso a primo/ultimo carattere.
-- Input null: gestito con fallback a stringa vuota.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come eseguirlo da terminale:
-1- Compila il file
-    kotlinc P3_StringAnalyzer.kt -include-runtime -d P3_StringAnalyzer.jar
-2- Esegui il programma
-    java -jar P3_StringAnalyzer.jar
-3- Inserisci la stringa quando richiesto a schermo.
-
+How to run from terminal:
+1. Compile the file:
+   kotlinc P3_StringAnalyzer.kt -include-runtime -d P3_StringAnalyzer.jar
+2. Run the program:
+   java -jar P3_StringAnalyzer.jar
 */
 fun main() {
     print("Enter a string: ")

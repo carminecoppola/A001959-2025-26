@@ -1,26 +1,18 @@
 /*
 Problem 2 - Safe List Access
-Obiettivo:
-- Scrivere una funzione safeGet(list: List<Int>, index: Int): Int?
-- Restituire null se l'indice è fuori dai limiti.
 
-Spiegazione codice:
-- La funzione restituisce un Int? perché un accesso non valido deve produrre null.
-- getOrNull(index) controlla in modo sicuro i limiti della lista.
-- Questo evita eccezioni come IndexOutOfBoundsException.
-- Nel main si verifica sia un indice valido sia uno non valido.
+Goal:
+- Complete this Kotlin exercise implementation.
 
-Edge cases:
-- Indice negativo: getOrNull restituisce null.
-- Indice maggiore dell'ultima posizione: getOrNull restituisce null.
-- Lista vuota: ogni accesso restituisce null.
+Notes:
+- Documentation translated to English.
+- Program logic remains unchanged.
 
-Come compilare ed eseguire:
-1- Compila il file
-    kotlinc P2_SafeListAccess.kt -include-runtime -d P2_SafeListAccess.jar
-2- Esegui il programma
-    java -jar P2_SafeListAccess.jar
-3- Questo esercizio non richiede input
+How to run from terminal:
+1. Compile the file:
+   kotlinc P2_SafeListAccess.kt -include-runtime -d P2_SafeListAccess.jar
+2. Run the program:
+   java -jar P2_SafeListAccess.jar
 */
 
 fun safeGet(list: List<Int>, index: Int): Int? = list.getOrNull(index)
