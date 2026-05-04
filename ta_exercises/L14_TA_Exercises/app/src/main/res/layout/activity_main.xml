@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Main layout for the ViewModel and LiveData demonstration.
+    The Activity observes state and renders it here.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <!--
+        Container centered on the screen for classroom readability.
+    -->
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintWidth_percent="0.90"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!--
+            Title of the demonstration.
+        -->
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewModel &amp; LiveData Demo"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <!--
+            Explanation of the key concept demonstrated by the app.
+        -->
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The counter state is stored in a ViewModel and observed through LiveData."
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="24dp" />
+
+        <!--
+            Current counter value rendered from LiveData.
+        -->
+        <TextView
+            android:id="@+id/tvCounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_marginBottom="24dp" />
+
+        <!--
+            Increment button dispatches an event to the ViewModel.
+        -->
+        <Button
+            android:id="@+id/btnIncrement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Increment"
+            android:layout_marginBottom="12dp" />
+
+        <!--
+            Decrement button demonstrates error handling when value is zero.
+        -->
+        <Button
+            android:id="@+id/btnDecrement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Decrement"
+            android:layout_marginBottom="12dp" />
+
+        <!--
+            Reset button restores the initial state through the ViewModel.
+        -->
+        <Button
+            android:id="@+id/btnReset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:layout_marginBottom="24dp" />
+
+        <!--
+            Error message observed from the ViewModel.
+        -->
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
