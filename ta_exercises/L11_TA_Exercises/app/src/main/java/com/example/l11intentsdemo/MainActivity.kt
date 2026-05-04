@@ -1,47 +1,40 @@
 package com.example.l11intentsdemo
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.l11intentsdemo.ui.theme.L11IntentsDemoTheme
+import com.example.l11intentsdemo.databinding.ActivityMainBinding
 
 class MainActivity : ComponentActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    companion object {
+        private const val TAG = "L11_MAIN"
+        const val EXTRA_USERNAME = "extra_username"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            L11IntentsDemoTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.btnGo.setOnClickListener {
+            val username = binding.etUsername.text?.toString()?.trim()
+
+            if (username.isNullOrEmpty()) {
+                binding.etUsername.error = "Required"
+                return@setOnClickListener
             }
+
+            val intent = Intent(this, DetailActivity::class.java)
+            intent.putExtra(EXTRA_USERNAME, username)
+
+            Log.d(TAG, "Sending username=$username")
+
+            startActivity(intent)
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    L11IntentsDemoTheme {
-        Greeting("Android")
     }
 }
