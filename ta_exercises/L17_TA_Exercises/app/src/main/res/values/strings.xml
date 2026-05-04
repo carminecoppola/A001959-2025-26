@@ -1,0 +1,6 @@
+<resources>
+    <!--
+        Application name displayed in the Android launcher.
+    -->
+    <string name="app_name">L17 Retrofit Demo</string>
+</resources>
