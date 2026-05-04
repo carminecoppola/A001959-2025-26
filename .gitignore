@@ -13,6 +13,11 @@ homework/.generated_runners/
 
 # Gradle
 .gradle/
+**/.gradle/
+**/caches/
+**/daemon/
+**/native/
+local.properties
 build/
 *.gradle.kts.bak
 
