@@ -20,7 +20,7 @@ class ProductViewModelP3(
     private val repository: ProductRepositoryP3
 ) {
     fun loadProducts(): List<String> {
-        // Il ViewModel prepara i data in a forma facile da showsre nella UI.
+        // The ViewModel prepares data in a form that is easy to display in the UI.
         return repository.getProducts().map { product ->
             "${product.name} - EUR ${product.price}"
         }

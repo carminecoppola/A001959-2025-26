@@ -1,5 +1,5 @@
-// L24 - P1: diagramma dell'architettura.
-// The output is a rappresentazione testuale of the flow tra i componenti principali.
+// L24 - P1: architecture diagram.
+// The output is a textual representation of the flow between main components.
 
 data class ArchitectureNodeP1(
     val name: String
@@ -19,7 +19,7 @@ class ArchitectureDiagramSimulatorP1 {
     }
 }
 
-// Basic use case: generiamo a diagramma testuale semplice.
+// Basic use case: we generate a simple textual diagram.
 fun demoL24P1ArchitectureDiagram(): String {
     return ArchitectureDiagramSimulatorP1().render()
 }

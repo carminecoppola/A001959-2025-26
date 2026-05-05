@@ -4,11 +4,11 @@
 class DemoScriptSimulatorP5 {
     fun script(): List<String> {
         return listOf(
-            "1. Avviare l'app",
+            "1. Launch the app",
             "2. Biometric authentication with PIN fallback",
             "3. Show the securely stored token",
             "4. Open the protected dashboard",
-            "5. Verificare the salvataggio encrypted",
+            "5. Verify encrypted storage",
             "6. Log out and invalidate the session"
         )
     }

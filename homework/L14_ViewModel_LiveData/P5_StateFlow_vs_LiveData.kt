@@ -1,4 +1,4 @@
-// Exercise P5: educational comparison tra StateFlow and LiveData.
+// Exercise P5: educational comparison between StateFlow and LiveData.
 // StateFlow: HOT stream - emits continuously even without subscribers
 // LiveData: COLD observer - notifies only registered observers
 
@@ -67,7 +67,7 @@ fun demoP5StateFlowVsLiveData(): List<String> {
     output.add("")
     output.add("=== LiveData (COLD Obis usedr) ===")
     val liveData = SimpleLiveDataLikeP5("Iniziale")
-    // Obis usedr si registra PRIMA of the update
+    // Observer registers BEFORE the update
     liveData.obis used { value ->
         output.add("LiveData obis usedr notifiesto: $value")
     }

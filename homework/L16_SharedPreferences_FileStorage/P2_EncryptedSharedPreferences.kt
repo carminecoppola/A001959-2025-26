@@ -4,8 +4,8 @@
 class EncryptedSharedPreferencesSimulatorP2 {
     private val storage = mutableMapOf<String, String>()
 
-    // Usiamo a trasformazione molto semplice for showsre l'idea di encryption.
-    // In a vera app Android si userebbe the libreria EncryptedSharedPreferences.
+    // We use a very simple transformation to show the idea of encryption.
+    // In a real Android app, you would use the EncryptedSharedPreferences library.
     private fun encrypt(value: String): String = value.reversed()
 
     private fun decrypt(value: String): String = value.reversed()
@@ -20,7 +20,7 @@ class EncryptedSharedPreferencesSimulatorP2 {
     }
 }
 
-// Basic use case: we save and we read a token in modo protetto.
+// Basic use case: we save and read a token in protected form.
 fun demoL16P2EncryptedSharedPreferences(): String {
     val prefs = EncryptedSharedPreferencesSimulatorP2()
     prefs.putSecureString("token", "abc123")

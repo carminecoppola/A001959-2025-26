@@ -1,5 +1,5 @@
 // L16 - P5: politica di backup for SharedPreferences.
-// The goal is decidere quali data possono essere inclusi nel backup automatico.
+// The goal is to decide which data can be included in automatic backup.
 
 data class PreferenceEntryP5(
     val key: String,
@@ -30,7 +30,7 @@ fun demoL16P5BackupPolicy(): Map<String, String> {
 fun main() {
     println("=== Backup Policy ===")
     val backup = demoL16P5BackupPolicy()
-    println("Dati nel backup:")
+    println("Data in backup:")
     backup.forEach { (key, value) -> println("  $key: $value") }
     println("\nNota: 'token' is excluded from backup (allowBackup=false)")
 }

@@ -1,4 +1,4 @@
-// L18 - P4: gestione of the errors nelle coroutine with try-catch.
+// L18 - P4: error handling in coroutines with try-catch.
 // The goal is to catch errors during a simulated async operation.
 
 sealed class CoroutineResultP4<out T> {
@@ -10,7 +10,7 @@ class CoroutineErrorHandlerSimulatorP4 {
     fun runOperation(shouldFail: Boolean): CoroutineResultP4<String> {
         return try {
             if (shouldFail) {
-                throw RuntimeException("Errore nella coroutine simulata")
+                throw RuntimeException("Simulated coroutine error")
             }
             CoroutineResultP4.Success("Operazione completata")
         } catch (exception: Exception) {

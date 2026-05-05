@@ -1,4 +1,4 @@
-// L22 - P5: gestione of the sessione.
+// L22 - P5: session management.
 // A session keeps the user state and controls expiration.
 
 data class SessionP5(
@@ -37,5 +37,5 @@ fun main() {
     println("=== Session Management ===")
     val results = demoL22P5SessionManagement()
     println("Sessione valida adesso: ${results[0]}")
-    println("Sessione valida dopo: ${results[1]}")
+    println("Session valid after: ${results[1]}")
 }

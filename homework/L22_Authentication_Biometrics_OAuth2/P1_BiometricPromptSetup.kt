@@ -37,7 +37,7 @@ class FallbackPINAuthenticatorP1 {
     }
 }
 
-// Basic use case: verifichiamo the availability and simuliamo l'autenticazione.
+// Basic use case: we verify availability and simulate authentication.
 fun demoL22P1BiometricPromptSetup(): List<String> {
     val prompt = BiometricPromptSimulatorP1()
     prompt.canAuthenticate(sensorAvailable = true)

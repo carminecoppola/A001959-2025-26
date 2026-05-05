@@ -14,14 +14,14 @@ class SharedPreferencesSimulatorP1 {
         return storage[key] ?: defaultValue
     }
 
-    // Questo metodo shows the flow completo di write and read.
+    // This method shows the full write/read flow.
     fun saveAndReadExample(): String {
         putString("username", "student")
         return getString("username")
     }
 }
 
-// Basic use case: simuliamo the salvataggio di a nome utente.
+// Basic use case: we simulate saving a username.
 fun demoL16P1SharedPreferencesReadWrite(): String {
     return SharedPreferencesSimulatorP1().saveAndReadExample()
 }

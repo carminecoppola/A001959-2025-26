@@ -43,7 +43,7 @@ class DatabaseMigrationPlanP4 {
     }
 }
 
-// Basic use case: dewe write a migration and we show the trasformazione dei data.
+// Basic use case: we describe a migration and show data transformation.
 fun demoP4DatabaseMigration(): List<String> {
     val output = mutableListOf<String>()
 

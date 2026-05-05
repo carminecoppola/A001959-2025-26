@@ -1,5 +1,5 @@
 // L18 - P5: operatore combine().
-// Here we show l'idea di combinare two flows for produrre a unico risultato.
+// Here we show the idea of combining two flows to produce one result.
 // When ONE source changes, the combined result updates.
 
 class SimpleCombineFlowP5<T>(initialValue: T) {

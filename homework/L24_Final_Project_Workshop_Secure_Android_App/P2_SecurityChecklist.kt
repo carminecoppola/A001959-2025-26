@@ -1,5 +1,5 @@
 // L24 - P2: security checklist.
-// Questa list aiuta a verify i punti principali prima of the rilascio.
+// This list helps verify the main points before release.
 
 class SecurityChecklistSimulatorP2 {
     private val checklist = listOf(

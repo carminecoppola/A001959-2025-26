@@ -25,7 +25,7 @@ class BuildVariantSimulatorP3 {
     }
 }
 
-// Basic use case: confrontiamo debug and release.
+// Basic use case: we compare debug and release.
 fun demoL24P3BuildVariantConfig(): List<BuildVariantConfigP3> {
     val simulator = BuildVariantSimulatorP3()
     return listOf(simulator.debug(), simulator.release())

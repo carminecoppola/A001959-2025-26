@@ -1,4 +1,4 @@
-// Exercise P1: classe ViewModel semplice.
+// Exercise P1: simple ViewModel class.
 // Here we simulate the ruolo of the ViewModel: conservare and preparare i data for the UI.
 
 data class UiStateP1(

@@ -1,5 +1,5 @@
 // L20 - P3: file encrypted with l'API EncryptedFile.
-// L'esempio simula the write di a contenuto protetto su file.
+// The example simulates writing protected content to file.
 
 import java.io.File
 
@@ -20,7 +20,7 @@ class EncryptedFileSimulatorP3(private val directory: File) {
 // Basic use case: we write and we read a file encrypted.
 fun demoL20P3EncryptedFile(directory: File): String {
     val encryptedFile = EncryptedFileSimulatorP3(directory)
-    encryptedFile.writeEncryptedFile("secure.txt", "contenuto protetto")
+    encryptedFile.writeEncryptedFile("secure.txt", "protected content")
     return encryptedFile.readEncryptedFile("secure.txt")
 }
 

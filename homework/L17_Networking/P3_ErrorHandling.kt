@@ -1,4 +1,4 @@
-// L17 - P3: gestione of the errors nelle chiamate di network.
+// L17 - P3: error handling in network calls.
 // The idea is distinguere a response corretta da a failure.
 
 sealed class NetworkResultP3<out T> {

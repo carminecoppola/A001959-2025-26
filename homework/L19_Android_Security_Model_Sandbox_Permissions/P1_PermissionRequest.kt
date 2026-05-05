@@ -1,4 +1,4 @@
-// L19 - P1: richiesta di permessi nell'app Android.
+// L19 - P1: requesting permissions in an Android app.
 // This example shows the flow concettuale: verify, request and registrare the permission.
 
 class PermissionRequestSimulatorP1 {

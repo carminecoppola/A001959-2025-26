@@ -1,4 +1,4 @@
-// L22 - P4: decodifica di a token JWT.
+// L22 - P4: JWT token decoding.
 // The example extracts payload information in a simple way.
 
 import java.util.Base64

@@ -1,4 +1,4 @@
-// Exercise P2: implementazione semplice di a DiffUtil.Callback.
+// Exercise P2: simple implementation of a DiffUtil.Callback.
 // DiffUtil compares two lists and updates only changed items,
 // evitando di ridisegnare tutta the RecyclerView.
 
@@ -16,13 +16,13 @@ class SimpleDiffUtilCallbackP2(
 
     fun getNewListSize(): Int = newList.size
 
-    // Qui confrontiamo l'identita dell'item, quindi capiamo se stiamo parlando
+    // Here we compare item identity to understand whether we are referring
     // of the same record even if the content changed.
     fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldList[oldItemPosition].id == newList[newItemPosition].id
     }
 
-    // Qui confrontiamo the contenuto completo for capire se i data sono davvero identici.
+    // Here we compare full content to verify whether data is actually identical.
     fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldList[oldItemPosition] == newList[newItemPosition]
     }
@@ -45,7 +45,7 @@ class SimpleDiffUtilCallbackP2(
                 }
                 oldItem != null && newItem != null -> {
                     if (!areItemsTheSame(index, index)) {
-                        changes.add("Elemento diverso in posizione $index")
+                        changes.add("Different item at position $index")
                     } else if (!areContentsTheSame(index, index)) {
                         changes.add("Aggiornato: ${oldItem.title}")
                     }
@@ -57,7 +57,7 @@ class SimpleDiffUtilCallbackP2(
     }
 }
 
-// Basic use case: confrontiamo a list vecchia with a nuova.
+// Basic use case: we compare an old list with a new one.
 fun demoP2DiffUtilCallback(): List<String> {
     val oldList = listOf(
         LessonItemP2(1, "Apple", "Frutto rosso"),

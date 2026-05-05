@@ -24,7 +24,7 @@ class ClickListenerPatternAdapterP5(
     }
 }
 
-// Basic use case: simuliamo the clic su a item of the list.
+// Basic use case: we simulate clicking an item in the list.
 fun demoP5ClickListenerPattern(): List<String> {
     val items = listOf(
         ClickableItemP5(1, "Apri dettaglio"),

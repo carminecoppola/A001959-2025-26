@@ -7,7 +7,7 @@ data class ArticleP2(
 )
 
 class JsonParserSimulatorP2 {
-    // Parsing molto semplice for mantenere l'esempio didattico.
+    // Very simple parsing to keep the example educational.
     fun parseArticle(json: String): ArticleP2 {
         val id = Regex("\"id\"\\s*:\\s*(\\d+)").find(json)?.groupValues?.get(1)?.toInt() ?: 0
         val title = Regex("\"title\"\\s*:\\s*\"([^\"]+)\"").find(json)?.groupValues?.get(1) ?: ""

@@ -16,9 +16,9 @@ class SELinuxContextSimulatorP2(
 
     fun describeAccess(resource: String): String {
         return if (canAccess(resource)) {
-            "Access withsentito a $resource nel dominio ${context.domain}"
+            "Access allowed to $resource nel dominio ${context.domain}"
         } else {
-            "Accesso negato a $resource nel dominio ${context.domain}"
+            "Access denied to $resource nel dominio ${context.domain}"
         }
     }
 }

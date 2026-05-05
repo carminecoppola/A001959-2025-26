@@ -1,5 +1,5 @@
 // L19 - P4: componenti esportati.
-// Un componente esportato can essere richiamato da althree app, quindi must be limitato with attenzione.
+// An exported component can be called by other apps, so it must be carefully restricted.
 
 data class ExportedComponentP4(
     val name: String,
@@ -14,14 +14,14 @@ class ExportedComponentPolicyP4 {
 
     fun explain(component: ExportedComponentP4): String {
         return if (canBeCalledFromOutside(component)) {
-            "${component.name} and accessibile da althree app"
+            "${component.name} is accessible by other apps"
         } else {
-            "${component.name} and protetto o richiede a permission"
+            "${component.name} is protected or requires a permission"
         }
     }
 }
 
-// Basic use case: confrontiamo a componente aperto and one protetto.
+// Basic use case: we compare an open component and a protected one.
 fun demoL19P4ExportedComponents(): List<String> {
     val policy = ExportedComponentPolicyP4()
     return listOf(

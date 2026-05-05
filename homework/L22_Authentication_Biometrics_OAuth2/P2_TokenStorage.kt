@@ -1,5 +1,5 @@
 // L22 - P2: secure token storage.
-// The idea is proteggere the token prima di salvarlo localmente.
+// The idea is to protect the token before storing it locally.
 
 class SecureTokenStorageSimulatorP2 {
     private var encryptedAccessToken: String? = null

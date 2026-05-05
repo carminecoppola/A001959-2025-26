@@ -1,5 +1,5 @@
 // Exercise P2: query DAO in stile Room.
-// Un DAO espone operazioni for leggere and scrivere i data in modo organizzato.
+// A DAO exposes operations to read and write data in an organized way.
 
 data class NoteEntityP2(
     val id: Int,
@@ -33,29 +33,29 @@ class NoteDaoSimulatorP2(
 fun demoP2DaoQueries(): List<String> {
     val dao = NoteDaoSimulatorP2(
         mutableListOf(
-            NoteEntityP2(1, "Prima nota"),
-            NoteEntityP2(2, "Seconda nota")
+            NoteEntityP2(1, "First note"),
+            NoteEntityP2(2, "Second note")
         )
     )
 
     val output = mutableListOf<String>()
 
-    // READ: we read all notess
+    // READ: we read all notes
     output.add("--- READ (All notess) ---")
     dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 
-    // CREATE: we insert a nuova nota
-    output.add("\n--- CREATE (Inserisci nota 3) ---")
-    dao.insert(NoteEntityP2(3, "Terza nota"))
+    // CREATE: we insert a new note
+    output.add("\n--- CREATE (Insert note 3) ---")
+    dao.insert(NoteEntityP2(3, "Third note"))
     dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 
-    // UPDATE: we update a nota
-    output.add("\n--- UPDATE (Aggiorna nota 2) ---")
-    dao.update(NoteEntityP2(2, "Seconda nota MODIFICATA"))
+    // UPDATE: we update a note
+    output.add("\n--- UPDATE (Update note 2) ---")
+    dao.update(NoteEntityP2(2, "Second note MODIFICATA"))
     dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 
-    // DELETE: we delete a nota
-    output.add("\n--- DELETE (Elimina nota 1) ---")
+    // DELETE: we delete a note
+    output.add("\n--- DELETE (Delete note 1) ---")
     dao.delete(1)
     dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 

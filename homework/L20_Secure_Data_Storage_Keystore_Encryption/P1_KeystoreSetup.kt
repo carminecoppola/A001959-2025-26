@@ -25,7 +25,7 @@ fun demoL20P1KeystoreSetup(): List<String> {
     val key = keystore.generateKey("app_master_key")
     return listOf(
         "Chiave creata: ${key.alias}",
-        "Presente nel keystore: ${keystore.hasKey(key.alias)}"
+        "Present in keystore: ${keystore.hasKey(key.alias)}"
     )
 }
 

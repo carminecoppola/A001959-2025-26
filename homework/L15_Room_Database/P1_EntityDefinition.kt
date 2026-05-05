@@ -1,5 +1,5 @@
 // Exercise P1: definition of an Entity for a Room database.
-// Here we simulate a tabella with a semplice data class Kotlin.
+// Here we simulate a table with a simple Kotlin data class.
 
 data class BookEntityP1(
     val id: Int,

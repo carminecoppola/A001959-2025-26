@@ -35,7 +35,7 @@ fun demoL20P4SQLCipherSetup(): List<String> {
     output.add("=== SQLCipher Access Control ===")
     
     // Tentativo SENZA password
-    output.add("\n--- Accesso senza password ---")
+    output.add("\n--- Access without password ---")
     output.add(setup.openDatabase("app.db", null))
 
     // Tentativo CON wrong password

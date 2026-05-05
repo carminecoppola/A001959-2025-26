@@ -54,7 +54,7 @@ class OAuth2ClientSimulatorP3(
     }
 }
 
-// Basic use case: eseguiamo the flow with conferma utente and senza conferma.
+// Basic use case: we run the flow with and without user confirmation.
 fun demoL22P3OAuth2Flow(): List<OAuth2StateP3> {
     val is usedr = OAuth2AuthorizationServerP3()
     val client = OAuth2ClientSimulatorP3(

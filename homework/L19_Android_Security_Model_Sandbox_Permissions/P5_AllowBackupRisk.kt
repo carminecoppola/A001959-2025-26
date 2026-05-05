@@ -1,5 +1,5 @@
-// L19 - P5: rischio legato ad allowBackup.
-// Se allowBackup and attivo senza attenzione, sensitive data possono finire nel backup.
+// L19 - P5: risk related to allowBackup.
+// If allowBackup is enabled without care, sensitive data may end up in backups.
 
 data class BackupRiskP5(
     val allowBackup: Boolean,
@@ -11,7 +11,7 @@ class AllowBackupRiskAnalyzerP5 {
         return when {
             !risk.allowBackup -> "Low risk: backup is disabled"
             risk.containsSensitiveData -> "Rischio alto: backup attivo with sensitive data"
-            else -> "Rischio moderato: backup attivo ma senza sensitive data"
+            else -> "Moderate risk: backup enabled but without sensitive data"
         }
     }
 }

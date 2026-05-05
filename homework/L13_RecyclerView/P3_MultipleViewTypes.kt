@@ -1,4 +1,4 @@
-// Exercise P3: gestione di more tipi di vista nello stesso elenco.
+// Exercise P3: handling multiple view types in the same list.
 // In a real RecyclerView this is used when items have different layouts.
 
 sealed class FeedItemP3 {
@@ -16,8 +16,8 @@ class MultipleViewTypesAdapterP3(
         const val VIEW_TYPE_DIVIDER = 3
     }
 
-    // Qui stiamo verificando the tipo di item and remaintuendo a layout diverso
-    // for ogni tipo.
+    // Here we check the item type and return a different layout
+    // for each type.
     fun getItemViewType(position: Int): Int {
         return when (items[position]) {
             is FeedItemP3.TextItem -> VIEW_TYPE_TEXT
@@ -26,17 +26,17 @@ class MultipleViewTypesAdapterP3(
         }
     }
 
-    // Questa funzione simula the creazione di a layout diverso in base al tipo.
+    // This function simulates creating a different layout based on type.
     fun onCreateViewHolder(viewType: Int): String {
         return when (viewType) {
             VIEW_TYPE_TEXT -> "Creata ViewHolder testuale"
-            VIEW_TYPE_IMAGE -> "Creata ViewHolder immagine"
+            VIEW_TYPE_IMAGE -> "Created image ViewHolder"
             VIEW_TYPE_DIVIDER -> "Creata ViewHolder divisore"
             else -> "Tipo sconosciuto"
         }
     }
 
-    // Questa funzione simula the collegamento tra data and vista.
+    // This function simulates binding between data and view.
     fun onBindViewHolder(position: Int): String {
         return when (val item = items[position]) {
             is FeedItemP3.TextItem -> "Testo #${item.id}: ${item.message}"
@@ -61,8 +61,8 @@ class MultipleViewTypesAdapterP3(
 // Basic use case: costruiamo a feed with items different.
 fun demoP3MultipleViewTypes(): List<String> {
     val feedItems = listOf(
-        FeedItemP3.TextItem(1, "Benvenuto nel feed"),
-        FeedItemP3.ImageItem(2, "https://example.com/image.png", "Un esempio di immagine"),
+        FeedItemP3.TextItem(1, "Welcome to the feed"),
+        FeedItemP3.ImageItem(2, "https://example.com/image.png", "An image example"),
         FeedItemP3.DividerItem(3),
         FeedItemP3.TextItem(4, "Altro messaggio di text")
     )

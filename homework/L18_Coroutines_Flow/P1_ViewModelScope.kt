@@ -1,6 +1,6 @@
 // L18 - P1: uso di viewModelScope.
 // In Android viewModelScope permette di lanciare coroutine legate al ciclo di vita of the ViewModel.
-// Here we simulate operazioni asincrone with a semplice delay.
+// Here we simulate async operations with a simple delay.
 
 class ViewModelScopeSimulatorP1 {
     private val launchedTasks = mutableListOf<String>()
