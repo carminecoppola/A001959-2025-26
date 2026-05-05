@@ -1,5 +1,5 @@
 // L16 - P3: setup di DataStore.
-// Questo esempio mostra come potrebbe essere organizzato uno storage moderno a stato unico.
+// This example shows how a modern single-state storage can be organized.
 
 data class AppPreferencesP3(
     val darkModeEnabled: Boolean,
@@ -16,7 +16,7 @@ class DataStoreSimulatorP3(initialState: AppPreferencesP3) {
     }
 }
 
-// Caso d'uso di base: cambiamo una preferenza e leggiamo il nuovo stato.
+// Basic use case: cambiamo a preferenza and we read the new state.
 fun demoL16P3DataStoreSetup(): AppPreferencesP3 {
     val dataStore = DataStoreSimulatorP3(
         AppPreferencesP3(darkModeEnabled = false, language = "it")

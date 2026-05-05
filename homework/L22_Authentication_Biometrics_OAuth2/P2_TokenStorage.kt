@@ -1,5 +1,5 @@
-// L22 - P2: memorizzazione sicura dei token.
-// L'idea e proteggere il token prima di salvarlo localmente.
+// L22 - P2: secure token storage.
+// The idea is proteggere the token prima di salvarlo localmente.
 
 class SecureTokenStorageSimulatorP2 {
     private var encryptedAccessToken: String? = null
@@ -32,7 +32,7 @@ class SecureTokenStorageSimulatorP2 {
     }
 }
 
-// Caso d'uso di base: salviamo, leggiamo e poi cancelliamo un token.
+// Basic use case: we save, read, and then delete a token.
 fun demoL22P2TokenStorage(): List<String?> {
     val storage = SecureTokenStorageSimulatorP2()
     storage.saveAccessToken("access-token-123")

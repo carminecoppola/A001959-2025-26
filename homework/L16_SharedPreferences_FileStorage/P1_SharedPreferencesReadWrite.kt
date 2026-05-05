@@ -1,27 +1,27 @@
-// L16 - P1: lettura e scrittura con SharedPreferences.
-// Questo esempio mostra l'idea base: salvare una coppia chiave/valore e poi leggerla.
+// L16 - P1: read and write with SharedPreferences.
+// This example shows the basic idea: save a key/value pair and then read it.
 
 class SharedPreferencesSimulatorP1 {
     private val storage = mutableMapOf<String, String>()
 
-    // Salviamo un valore di testo in memoria.
+    // Salviamo a valore di text in memoria.
     fun putString(key: String, value: String) {
         storage[key] = value
     }
 
-    // Leggiamo un valore di testo, oppure restituiamo un valore di default.
+    // We read a text value, or return a default value.
     fun getString(key: String, defaultValue: String = ""): String {
         return storage[key] ?: defaultValue
     }
 
-    // Questo metodo mostra il flusso completo di scrittura e lettura.
+    // Questo metodo shows the flow completo di write and read.
     fun saveAndReadExample(): String {
         putString("username", "student")
         return getString("username")
     }
 }
 
-// Caso d'uso di base: simuliamo il salvataggio di un nome utente.
+// Basic use case: simuliamo the salvataggio di a nome utente.
 fun demoL16P1SharedPreferencesReadWrite(): String {
     return SharedPreferencesSimulatorP1().saveAndReadExample()
 }

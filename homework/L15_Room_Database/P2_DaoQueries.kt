@@ -1,5 +1,5 @@
-// Esercizio P2: query DAO in stile Room.
-// Un DAO espone operazioni per leggere e scrivere i dati in modo organizzato.
+// Exercise P2: query DAO in stile Room.
+// Un DAO espone operazioni for leggere and scrivere i data in modo organizzato.
 
 data class NoteEntityP2(
     val id: Int,
@@ -7,29 +7,29 @@ data class NoteEntityP2(
 )
 
 class NoteDaoSimulatorP2(
-    private val notes: MutableList<NoteEntityP2>
+    private val notess: MutableList<NoteEntityP2>
 ) {
-    fun getAllNotes(): List<NoteEntityP2> = notes.toList()
+    fun getAllNotes(): List<NoteEntityP2> = notess.toList()
 
-    fun findById(id: Int): NoteEntityP2? = notes.firstOrNull { note -> note.id == id }
+    fun findById(id: Int): NoteEntityP2? = notess.firstOrNull { notes -> notes.id == id }
 
-    fun insert(note: NoteEntityP2) {
-        notes.add(note)
+    fun insert(notes: NoteEntityP2) {
+        notess.add(notes)
     }
 
-    fun update(note: NoteEntityP2) {
-        val index = notes.indexOfFirst { it.id == note.id }
+    fun update(notes: NoteEntityP2) {
+        val index = notess.indexOfFirst { it.id == notes.id }
         if (index != -1) {
-            notes[index] = note
+            notess[index] = notes
         }
     }
 
     fun delete(id: Int) {
-        notes.removeAll { it.id == id }
+        notess.removeAll { it.id == id }
     }
 }
 
-// Caso d'uso di base: eseguiamo tutte le operazioni CRUD (Create, Read, Update, Delete).
+// Basic use case: we run all CRUD operations (Create, Read, Update, Delete).
 fun demoP2DaoQueries(): List<String> {
     val dao = NoteDaoSimulatorP2(
         mutableListOf(
@@ -40,24 +40,24 @@ fun demoP2DaoQueries(): List<String> {
 
     val output = mutableListOf<String>()
 
-    // READ: leggiamo tutte le note
-    output.add("--- READ (Tutte le note) ---")
-    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+    // READ: we read all notess
+    output.add("--- READ (All notess) ---")
+    dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 
-    // CREATE: inseriamo una nuova nota
+    // CREATE: we insert a nuova nota
     output.add("\n--- CREATE (Inserisci nota 3) ---")
     dao.insert(NoteEntityP2(3, "Terza nota"))
-    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+    dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 
-    // UPDATE: aggiorniamo una nota
+    // UPDATE: we update a nota
     output.add("\n--- UPDATE (Aggiorna nota 2) ---")
     dao.update(NoteEntityP2(2, "Seconda nota MODIFICATA"))
-    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+    dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 
-    // DELETE: eliminiamo una nota
+    // DELETE: we delete a nota
     output.add("\n--- DELETE (Elimina nota 1) ---")
     dao.delete(1)
-    dao.getAllNotes().forEach { note -> output.add("${note.id}: ${note.text}") }
+    dao.getAllNotes().forEach { notes -> output.add("${notes.id}: ${notes.text}") }
 
     return output
 }

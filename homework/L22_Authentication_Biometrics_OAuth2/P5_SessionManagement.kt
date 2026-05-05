@@ -1,5 +1,5 @@
-// L22 - P5: gestione della sessione.
-// Una sessione conserva lo stato dell'utente e controlla la scadenza.
+// L22 - P5: gestione of the sessione.
+// A session keeps the user state and controls expiration.
 
 data class SessionP5(
     val userId: String,
@@ -24,7 +24,7 @@ class SessionManagerSimulatorP5 {
     }
 }
 
-// Caso d'uso di base: avviamo una sessione e ne controlliamo la validita.
+// Basic use case: we start a session and check its validity.
 fun demoL22P5SessionManagement(): List<Boolean> {
     val manager = SessionManagerSimulatorP5()
     manager.startSession("user-1", nowMinutes = 10)

@@ -1,5 +1,5 @@
 // L19 - P3: sandbox dell'app.
-// La sandbox isola i dati di un'app da quelli delle altre app.
+// The sandbox isolates one app's data from other apps' data.
 
 data class SandboxFolderP3(
     val appId: String,
@@ -23,7 +23,7 @@ class AppSandboxSimulatorP3(
     }
 }
 
-// Caso d'uso di base: salviamo un file e verifichiamo l'isolamento.
+// Basic use case: we save a file and verifichiamo l'isolamento.
 fun demoL19P3AppSandbox(): List<String> {
     val sandbox = AppSandboxSimulatorP3(
         SandboxFolderP3(appId = "com.example.app", files = mutableListOf())
@@ -31,7 +31,7 @@ fun demoL19P3AppSandbox(): List<String> {
 
     return listOf(
         sandbox.saveSensitiveData("profile.db"),
-        "Può un'altra app leggere? ${sandbox.canReadFromOtherApp("com.other.app")}",
+        "Can another app read it? ${sandbox.canReadFromOtherApp("com.other.app")}",
         "File nella sandbox: ${sandbox.listFiles().joinToString()}"
     )
 }

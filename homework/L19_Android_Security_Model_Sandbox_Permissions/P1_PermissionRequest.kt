@@ -1,5 +1,5 @@
 // L19 - P1: richiesta di permessi nell'app Android.
-// Questo esempio mostra il flusso concettuale: verificare, richiedere e registrare il permesso.
+// This example shows the flow concettuale: verify, request and registrare the permission.
 
 class PermissionRequestSimulatorP1 {
     private val grantedPermissions = mutableSetOf<String>()
@@ -10,10 +10,10 @@ class PermissionRequestSimulatorP1 {
 
     fun request(permission: String): String {
         return if (isGranted(permission)) {
-            "Permesso gia concesso: $permission"
+            "Permission already granted: $permission"
         } else {
             grantedPermissions.add(permission)
-            "Permesso richiesto e concesso: $permission"
+            "Permission requested and granted: $permission"
         }
     }
 
@@ -22,12 +22,12 @@ class PermissionRequestSimulatorP1 {
         return if (removed) {
             "Permesso revocato: $permission"
         } else {
-            "Permesso non presente: $permission"
+            "Permission not present: $permission"
         }
     }
 }
 
-// Caso d'uso di base: richiediamo un permesso e poi lo controlliamo.
+// Basic use case: we request a permission and then verify it.
 fun demoL19P1PermissionRequest(): List<String> {
     val simulator = PermissionRequestSimulatorP1()
     return listOf(

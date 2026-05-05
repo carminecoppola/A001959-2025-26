@@ -1,5 +1,5 @@
-// L21 - P3: traffico in chiaro.
-// L'obiettivo e rilevare e bloccare gli endpoint non sicuri.
+// L21 - P3: cleartext traffic.
+// The goal is to detect and block insecure endpoints.
 
 class CleartextTrafficPolicyP3 {
     fun isAllowed(url: String): Boolean {
@@ -8,14 +8,14 @@ class CleartextTrafficPolicyP3 {
 
     fun describe(url: String): String {
         return if (isAllowed(url)) {
-            "Traffico sicuro consentito per $url"
+            "Secure traffic allowed for $url"
         } else {
-            "Traffico in chiaro bloccato per $url"
+            "Cleartext traffic blocked for $url"
         }
     }
 }
 
-// Caso d'uso di base: controlliamo un URL sicuro e uno insicuro.
+// Basic use case: we check a secure URL and an insecure one.
 fun demoL21P3CleartextTraffic(): List<String> {
     val policy = CleartextTrafficPolicyP3()
     return listOf(

@@ -1,5 +1,5 @@
 // L21 - P1: network security config.
-// Questo esempio mostra l'idea di forzare HTTPS e bloccare configurazioni insicure.
+// This example shows l'idea di forzare HTTPS and block configurazioni insicure.
 
 data class NetworkSecurityPolicyP1(
     val enforceHttps: Boolean,
@@ -9,14 +9,14 @@ data class NetworkSecurityPolicyP1(
 class NetworkSecurityConfigSimulatorP1 {
     fun validate(policy: NetworkSecurityPolicyP1): String {
         return if (policy.enforceHttps && !policy.allowCleartext) {
-            "Configurazione sicura: solo HTTPS consentito"
+            "Secure configuration: only HTTPS allowed"
         } else {
-            "Configurazione debole: il traffico in chiaro non e bloccato"
+            "Weak configuration: cleartext traffic is not blocked"
         }
     }
 }
 
-// Caso d'uso di base: confrontiamo una policy sicura con una insicura.
+// Basic use case: we compare a secure policy with an insecure one.
 fun demoL21P1NetworkSecurityConfig(): List<String> {
     val simulator = NetworkSecurityConfigSimulatorP1()
     return listOf(

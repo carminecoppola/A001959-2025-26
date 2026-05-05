@@ -1,13 +1,13 @@
-// Esercizio P5: Flow che arriva dal database Room.
-// Qui simuliamo un flusso osservabile di dati che si aggiorna nel tempo.
-// Architettura: DAO → Repository → ViewModel → View (observer)
+// Exercise P5: Flow coming from the Room database.
+// Here we simulate an observable flow of data that updates over time.
+// Architettura: DAO → Repository → ViewModel → View (obis usedr)
 
 data class TaskEntityP5(
     val id: Int,
     val title: String
 )
 
-// Simula un DAO che espone un Flow
+// Simulates a DAO that exposes a Flow
 class TaskDaoSimulatorP5(
     private val tasks: MutableList<TaskEntityP5>
 ) {
@@ -29,18 +29,18 @@ class TaskDaoSimulatorP5(
     }
 }
 
-// Repository che accede al DAO
+// Repository that accesses the DAO
 class TaskRepositorySimulatorP5(
     private val dao: TaskDaoSimulatorP5
 ) {
     fun getTasksFlow(): SimpleRoomFlowP5<List<TaskEntityP5>> = dao.getAllTasksAsFlow()
 }
 
-// ViewModel che osserva il flow dal Repository
+// ViewModel that observes the flow from the repository
 class TaskViewModelSimulatorP5(
     private val repository: TaskRepositorySimulatorP5
 ) {
-    fun observeTasks(onTasksChanged: (List<TaskEntityP5>) -> Unit) {
+    fun obis usedTasks(onTasksChanged: (List<TaskEntityP5>) -> Unit) {
         repository.getTasksFlow().collect { tasks ->
             onTasksChanged(tasks)
         }
@@ -62,11 +62,11 @@ class SimpleRoomFlowP5<T>(initialValue: T) {
     }
 }
 
-// Caso d'uso: mostriamo il flusso completo DAO → Repo → ViewModel → View.
+// Use case: we show the flow completo DAO → Repo → ViewModel → View.
 fun demoP5FlowFromRoom(): List<String> {
     val output = mutableListOf<String>()
 
-    // Creiamo il DAO con dati iniziali
+    // Creiamo the DAO with data iniziali
     val dao = TaskDaoSimulatorP5(
         mutableListOf(
             TaskEntityP5(1, "Studiare Kotlin"),
@@ -80,33 +80,33 @@ fun demoP5FlowFromRoom(): List<String> {
     output.add("=== Flow da Room Database ===")
     output.add("\n--- Stato iniziale ---")
 
-    // Osserviamo il flow dal ViewModel
-    viewModel.observeTasks { tasks ->
+    // Osserviamo the flow dal ViewModel
+    viewModel.obis usedTasks { tasks ->
         tasks.forEach { task ->
             output.add("Task: ${task.id} - ${task.title}")
         }
     }
 
-    // Inseriamo un nuovo task - il flow si aggiorna automaticamente
+    // We insert a new task - the flow updates automatically
     output.add("\n--- Dopo inserimento Task 3 ---")
     dao.insertTask(TaskEntityP5(3, "Implementare Database"))
-    viewModel.observeTasks { tasks ->
+    viewModel.obis usedTasks { tasks ->
         tasks.forEach { task ->
             output.add("Task: ${task.id} - ${task.title}")
         }
     }
 
-    // Aggiorniamo un task - il flow si aggiorna automaticamente
-    output.add("\n--- Dopo aggiornamento Task 1 ---")
+    // We update a task - the flow updates automatically
+    output.add("\n--- Dopo updatesmento Task 1 ---")
     dao.updateTask(TaskEntityP5(1, "Studiare Kotlin (COMPLETATO)"))
-    viewModel.observeTasks { tasks ->
+    viewModel.obis usedTasks { tasks ->
         tasks.forEach { task ->
             output.add("Task: ${task.id} - ${task.title}")
         }
     }
 
     output.add("\n--- Architettura ---")
-    output.add("DAO.getAllTasksAsFlow() → Repository.getTasksFlow() → ViewModel.observeTasks() → View")
+    output.add("DAO.getAllTasksAsFlow() → Repository.getTasksFlow() → ViewModel.obis usedTasks() → View")
 
     return output
 }

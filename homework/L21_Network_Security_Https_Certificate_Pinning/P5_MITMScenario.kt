@@ -1,19 +1,19 @@
 // L21 - P5: scenario Man-in-the-Middle (MITM).
-// Simuliamo un controllo che blocca certificati non attesi.
+// We simulate a check that blocks unexpected certificates.
 
 class MITMDetectionSimulatorP5(
     private val trustedPins: Set<String>
 ) {
     fun inspect(receivedPin: String): String {
         return if (receivedPin in trustedPins) {
-            "Connessione sicura: pin riconosciuto"
+            "Secure connection: recognized pin"
         } else {
-            "Possibile MITM: pin non riconosciuto"
+            "Possible MITM: unrecognized pin"
         }
     }
 }
 
-// Caso d'uso di base: controlliamo una connessione valida e una sospetta.
+// Basic use case: we check a valid connection and a suspicious one.
 fun demoL21P5MITMScenario(): List<String> {
     val detector = MITMDetectionSimulatorP5(
         trustedPins = setOf("pin-main", "pin-backup")

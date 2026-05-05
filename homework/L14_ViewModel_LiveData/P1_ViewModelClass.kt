@@ -1,5 +1,5 @@
-// Esercizio P1: classe ViewModel semplice.
-// Qui simuliamo il ruolo del ViewModel: conservare e preparare i dati per la UI.
+// Exercise P1: classe ViewModel semplice.
+// Here we simulate the ruolo of the ViewModel: conservare and preparare i data for the UI.
 
 data class UiStateP1(
     val counter: Int,
@@ -22,7 +22,7 @@ class SimpleViewModelP1 {
     }
 }
 
-// Caso d'uso di base: incrementiamo un valore e leggiamo lo stato aggiornato.
+// Basic use case: we increment a value and read the updated state.
 fun demoP1ViewModelClass(): List<UiStateP1> {
     val viewModel = SimpleViewModelP1()
     return listOf(

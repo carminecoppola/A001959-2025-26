@@ -1,5 +1,5 @@
-// L23 - P2: correzione di una vulnerabilita SQL injection.
-// Questo file mostra il passaggio da una query insicura a una sicura.
+// L23 - P2: correzione di a vulnerabilita SQL injection.
+// This file shows the transition from an insecure query to a secure one.
 
 data class QueryP2(
     val sql: String,
@@ -19,7 +19,7 @@ class SQLInjectionFixSimulatorP2 {
     }
 }
 
-// Caso d'uso di base: confrontiamo query insicura e query sicura.
+// Basic use case: we compare an insecure query and a secure query.
 fun demoL23P2SQLInjectionFix(): List<String> {
     val simulator = SQLInjectionFixSimulatorP2()
     return listOf(

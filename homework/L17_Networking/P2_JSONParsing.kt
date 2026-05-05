@@ -1,5 +1,5 @@
-// L17 - P2: parsing JSON con Retrofit.
-// Qui similiamo il passaggio da una stringa JSON a un oggetto Kotlin.
+// L17 - P2: parsing JSON with Retrofit.
+// Here we simulate the transition from a JSON string to a Kotlin object.
 
 data class ArticleP2(
     val id: Int,
@@ -7,7 +7,7 @@ data class ArticleP2(
 )
 
 class JsonParserSimulatorP2 {
-    // Parsing molto semplice per mantenere l'esempio didattico.
+    // Parsing molto semplice for mantenere l'esempio didattico.
     fun parseArticle(json: String): ArticleP2 {
         val id = Regex("\"id\"\\s*:\\s*(\\d+)").find(json)?.groupValues?.get(1)?.toInt() ?: 0
         val title = Regex("\"title\"\\s*:\\s*\"([^\"]+)\"").find(json)?.groupValues?.get(1) ?: ""
@@ -15,7 +15,7 @@ class JsonParserSimulatorP2 {
     }
 }
 
-// Caso d'uso di base: trasformiamo una risposta JSON in un modello Kotlin.
+// Basic use case: we transform a JSON response into a Kotlin model.
 fun demoL17P2JSONParsing(): ArticleP2 {
     val json = """{"id": 7, "title": "Introduzione a Retrofit"}"""
     return JsonParserSimulatorP2().parseArticle(json)

@@ -1,5 +1,5 @@
 // L20 - P4: setup di SQLCipher.
-// SQLCipher cifra il database: qui simuliamo una connessione protetta e una query.
+// SQLCipher encrypts the database: here we simulate a protected connection and a query.
 
 data class SecureDatabaseConfigP4(
     val databaseName: String,
@@ -20,14 +20,14 @@ class SQLCipherSetupSimulatorP4 {
 
     fun openDatabase(databaseName: String, password: String?): String {
         return if (password != null && password.isNotEmpty()) {
-            "✓ Database '$databaseName' aperto con successo (password corretta)"
+            "✓ Database '$databaseName' aperto with success (correct password)"
         } else {
             "✗ Impossibile aprire '$databaseName': password mancante o errata"
         }
     }
 }
 
-// Caso d'uso di base: configuriamo un database cifrato e mostriamo il controllo di accesso.
+// Basic use case: we configure an encrypted database and show access control.
 fun demoL20P4SQLCipherSetup(): List<String> {
     val setup = SQLCipherSetupSimulatorP4()
     val output = mutableListOf<String>()
@@ -38,12 +38,12 @@ fun demoL20P4SQLCipherSetup(): List<String> {
     output.add("\n--- Accesso senza password ---")
     output.add(setup.openDatabase("app.db", null))
 
-    // Tentativo CON password errata
-    output.add("\n--- Accesso con password errata ---")
+    // Tentativo CON wrong password
+    output.add("\n--- Access with wrong password ---")
     output.add(setup.openDatabase("app.db", "wrong-password"))
 
-    // Accesso CON password corretta
-    output.add("\n--- Accesso con password corretta ---")
+    // Accesso CON correct password
+    output.add("\n--- Access with correct password ---")
     output.add(setup.openDatabase("app.db", "strong-password"))
 
     return output

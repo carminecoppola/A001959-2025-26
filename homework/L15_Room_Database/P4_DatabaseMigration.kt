@@ -1,5 +1,5 @@
-// Esercizio P4: migrazione del database.
-// La migrazione spiega come passare da una versione del database a un'altra preservando i dati.
+// Exercise P4: database migration.
+// Migration explains how to move from one database version to another while preserving data.
 
 data class UserRecordP4(
     val id: Int,
@@ -13,7 +13,7 @@ data class SchemaVersionP4(
 )
 
 class DatabaseMigrationPlanP4 {
-    // Simula una migrazione da v1 (id, name) a v2 (id, name, email)
+    // Simula a migration da v1 (id, name) a v2 (id, name, email)
     fun migrateData(
         oldRecords: List<Map<String, String>>,
         fromVersion: Int,
@@ -21,10 +21,10 @@ class DatabaseMigrationPlanP4 {
     ): List<Map<String, String?>> {
         return when {
             fromVersion == 1 && toVersion == 2 -> {
-                // Aggiungiamo il campo 'email' con valore di default
+                // Aggiungiamo the campo 'email' with valore di default
                 oldRecords.map { record ->
                     record.toMutableMap().apply {
-                        put("email", "")  // Default vuoto per i record v1
+                        put("email", "")  // Default vuoto for i record v1
                     }
                 }
             }
@@ -36,14 +36,14 @@ class DatabaseMigrationPlanP4 {
         return if (fromVersion.version < toVersion.version) {
             val newColumns = toVersion.columns.subtract(fromVersion.columns.toSet())
             "Migrazione da v${fromVersion.version} a v${toVersion.version}: " +
-            "aggiungere colonne $newColumns con valori di default"
+            "aggiungere columns $newColumns with values di default"
         } else {
-            "Nessuna migrazione necessaria"
+            "Nessuna migration necessaria"
         }
     }
 }
 
-// Caso d'uso di base: descriviamo una migrazione e mostriamo la trasformazione dei dati.
+// Basic use case: dewe write a migration and we show the trasformazione dei data.
 fun demoP4DatabaseMigration(): List<String> {
     val output = mutableListOf<String>()
 
@@ -52,24 +52,24 @@ fun demoP4DatabaseMigration(): List<String> {
 
     output.add(DatabaseMigrationPlanP4().getMigrationDescription(currentSchema, targetSchema))
 
-    // Dati della v1
+    // Dati of the v1
     val oldData = listOf(
         mapOf("id" to "1", "name" to "Alice"),
         mapOf("id" to "2", "name" to "Bob")
     )
 
-    output.add("\n--- Dati PRIMA della migrazione (v1) ---")
+    output.add("\n--- Dati PRIMA of the migration (v1) ---")
     oldData.forEach { output.add(it.toString()) }
 
-    // Eseguiamo la migrazione
+    // Eseguiamo the migration
     val migrator = DatabaseMigrationPlanP4()
     val newData = migrator.migrateData(oldData, 1, 2)
 
-    output.add("\n--- Dati DOPO la migrazione (v2) ---")
+    output.add("\n--- Dati DOPO the migration (v2) ---")
     newData.forEach { output.add(it.toString()) }
 
     output.add("\n--- Risultato ---")
-    output.add("I record della v1 sono preservati, con 'email' aggiunto come colonna vuota")
+    output.add("v1 records are preserved, with 'email' added as an empty column")
 
     return output
 }

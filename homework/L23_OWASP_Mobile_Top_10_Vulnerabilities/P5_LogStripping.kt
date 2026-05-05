@@ -1,5 +1,5 @@
 // L23 - P5: rimozione dei log sensibili.
-// In produzione i log devono evitare di stampare segreti o dati privati.
+// In produzione i log devono avoid di stampare segreti o data privati.
 
 enum class BuildTypeP5 {
     DEBUG,
@@ -16,7 +16,7 @@ class LogStrippingSimulatorP5 {
     }
 }
 
-// Caso d'uso di base: mostriamo il log in debug e in release.
+// Basic use case: we show the log in debug and in release.
 fun demoL23P5LogStripping(): List<String> {
     val simulator = LogStrippingSimulatorP5()
     return listOf(

@@ -1,5 +1,5 @@
-// Esercizio P5: click listener per gli elementi della lista.
-// L'idea e associare un'azione a ogni elemento quando viene premuto.
+// Exercise P5: click listener for list items.
+// The idea is to attach an action to each item when pressed.
 
 data class ClickableItemP5(
     val id: Int,
@@ -10,11 +10,11 @@ class ClickListenerPatternAdapterP5(
     private val items: List<ClickableItemP5>,
     private val onItemClicked: (ClickableItemP5) -> String
 ) {
-    // Qui impostiamo un click listener per ogni elemento della lista, che esegue
-    // un'azione quando l'elemento viene cliccato.
+    // Here we set a click listener for each list item, which executes
+    // an action when the item is clicked.
     fun click(position: Int): String {
         val item = items.getOrNull(position)
-            ?: return "Posizione non valida"
+            ?: return "Invalid position"
 
         return onItemClicked(item)
     }
@@ -24,12 +24,12 @@ class ClickListenerPatternAdapterP5(
     }
 }
 
-// Caso d'uso di base: simuliamo il clic su un elemento della lista.
+// Basic use case: simuliamo the clic su a item of the list.
 fun demoP5ClickListenerPattern(): List<String> {
     val items = listOf(
         ClickableItemP5(1, "Apri dettaglio"),
-        ClickableItemP5(2, "Condividi elemento"),
-        ClickableItemP5(3, "Elimina elemento")
+        ClickableItemP5(2, "Condividi item"),
+        ClickableItemP5(3, "Elimina item")
     )
 
     val adapter = ClickListenerPatternAdapterP5(items) { item ->

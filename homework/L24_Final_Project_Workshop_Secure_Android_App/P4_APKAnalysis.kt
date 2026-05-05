@@ -1,5 +1,5 @@
 // L24 - P4: analisi dell'APK.
-// L'obiettivo e individuare segnali semplici di configurazione o sicurezza da controllare.
+// The goal is to identify simple configuration or security signals to check.
 
 data class ApkFindingP4(
     val severity: String,
@@ -39,7 +39,7 @@ class ApkAnalysisSimulatorP4 {
         val highRiskPermissions = setOf("android.permission.READ_SMS", "android.permission.RECORD_AUDIO")
 
         if (snapshot.usesCleartext) {
-            findings.add(ApkFindingP4("high", "L'APK usa traffico in chiaro"))
+            findings.add(ApkFindingP4("high", "The APK uses cleartext traffic"))
         }
 
         if (snapshot.exportedCount > 2) {
@@ -67,7 +67,7 @@ class ApkAnalysisSimulatorP4 {
     }
 }
 
-// Caso d'uso di base: analizziamo un APK simulato.
+// Basic use case: analizziamo a APK simulato.
 fun demoL24P4APKAnalysis(): List<ApkFindingP4> {
     val manifest = """
         <application usesCleartextTraffic="true" debuggable="true">

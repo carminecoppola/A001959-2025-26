@@ -1,6 +1,6 @@
-// L19 - P2: contesto SELinux.
-// In Android il contesto SELinux non viene gestito direttamente dall'app, ma possiamo
-// modellare l'idea di regole di sicurezza che limitano l'accesso alle risorse.
+// L19 - P2: context SELinux.
+// In Android, SELinux context is not directly managed by the app, but we can
+// model the idea of security rules that limit access to resources.
 
 data class SecurityContextP2(
     val domain: String,
@@ -16,14 +16,14 @@ class SELinuxContextSimulatorP2(
 
     fun describeAccess(resource: String): String {
         return if (canAccess(resource)) {
-            "Accesso consentito a $resource nel dominio ${context.domain}"
+            "Access withsentito a $resource nel dominio ${context.domain}"
         } else {
             "Accesso negato a $resource nel dominio ${context.domain}"
         }
     }
 }
 
-// Caso d'uso di base: controlliamo l'accesso a due risorse diverse.
+// Basic use case: we check access to two different resources.
 fun demoL19P2SELinuxContext(): List<String> {
     val context = SecurityContextP2(
         domain = "untrusted_app",

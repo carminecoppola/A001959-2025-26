@@ -1,5 +1,5 @@
-// Esercizio P3: separazione dei livelli MVVM.
-// L'obiettivo e mostrare come Model, ViewModel e View possano essere separati.
+// Exercise P3: separazione dei livelli MVVM.
+// The goal is to show how Model, ViewModel, and View can be separated.
 
 data class ProductP3(
     val id: Int,
@@ -20,7 +20,7 @@ class ProductViewModelP3(
     private val repository: ProductRepositoryP3
 ) {
     fun loadProducts(): List<String> {
-        // Il ViewModel prepara i dati in una forma facile da mostrare nella UI.
+        // Il ViewModel prepara i data in a forma facile da showsre nella UI.
         return repository.getProducts().map { product ->
             "${product.name} - EUR ${product.price}"
         }
@@ -33,7 +33,7 @@ class ProductViewP3 {
     }
 }
 
-// Caso d'uso di base: il ViewModel prende i dati dal repository e la View li mostra.
+// Basic use case: the ViewModel gets data from the repository and the View displays it.
 fun demoP3MVVMLayers(): String {
     val repository = ProductRepositoryP3()
     val viewModel = ProductViewModelP3(repository)

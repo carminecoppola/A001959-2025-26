@@ -1,5 +1,5 @@
 // L23 - P3: regole ProGuard.
-// Le regole aiutano a minimizzare e proteggere il codice compilato.
+// Le regole aiutano a minimizzare and proteggere the code compilato.
 
 class ProGuardRulesSimulatorP3 {
     fun rules(): List<String> {
@@ -19,11 +19,11 @@ class ProGuardRulesSimulatorP3 {
     }
 
     fun describe(): String {
-        return "Regole ProGuard base per proteggere modelli e dipendenze note"
+        return "Regole ProGuard base for proteggere modelli and dipendenze notes"
     }
 }
 
-// Caso d'uso di base: leggiamo un set minimo di regole.
+// Basic use case: we read a set minimo di regole.
 fun demoL23P3ProGuardRules(): List<String> {
     val simulator = ProGuardRulesSimulatorP3()
     return listOf(

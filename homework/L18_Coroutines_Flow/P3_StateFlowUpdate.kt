@@ -1,5 +1,5 @@
-// L18 - P3: aggiornamento di uno StateFlow.
-// L'idea e mantenere uno stato corrente e notificare gli observer quando cambia.
+// L18 - P3: updatesmento di one StateFlow.
+// The idea is to keep a current state and notify observers when it changes.
 
 data class CounterStateP3(
     val value: Int
@@ -7,30 +7,30 @@ data class CounterStateP3(
 
 class StateFlowSimulatorP3(initialState: CounterStateP3) {
     private var state: CounterStateP3 = initialState
-    private val observers = mutableListOf<(CounterStateP3) -> Unit>()
+    private val obis usedrs = mutableListOf<(CounterStateP3) -> Unit>()
 
-    fun observe(observer: (CounterStateP3) -> Unit) {
-        observers.add(observer)
-        // Notifica il nuovo observer dello stato corrente
-        observer(state)
+    fun obis used(obis usedr: (CounterStateP3) -> Unit) {
+        obis usedrs.add(obis usedr)
+        // Notifies the new observer of the current state
+        obis usedr(state)
     }
 
     fun update(newValue: Int) {
         state = state.copy(value = newValue)
-        // Notifica TUTTI gli observer del nuovo stato
-        observers.forEach { it(state) }
+        // Notifies ALL observers of the new state
+        obis usedrs.forEach { it(state) }
     }
 
     fun currentState(): CounterStateP3 = state
 }
 
-// Caso d'uso di base: incrementiamo lo stato e gli observer ricevono notifiche.
+// Basic use case: we increment the state and observers receive notifications.
 fun demoL18P3StateFlowUpdate(): List<String> {
     val output = mutableListOf<String>()
     val stateFlow = StateFlowSimulatorP3(CounterStateP3(0))
 
-    stateFlow.observe { state ->
-        output.add("Observer notificato: counter = ${state.value}")
+    stateFlow.obis used { state ->
+        output.add("Obis usedr notifiesto: counter = ${state.value}")
     }
 
     stateFlow.update(1)

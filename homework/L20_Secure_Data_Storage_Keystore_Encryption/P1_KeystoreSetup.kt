@@ -1,5 +1,5 @@
-// L20 - P1: setup del Keystore.
-// Questo esempio mostra come si puo rappresentare la gestione sicura di una chiave.
+// L20 - P1: setup of the Keystore.
+// This example shows how secure key management can be represented.
 
 data class KeyAliasP1(
     val alias: String,
@@ -19,7 +19,7 @@ class KeystoreSimulatorP1 {
     }
 }
 
-// Caso d'uso di base: creiamo una chiave e ne controlliamo la presenza.
+// Basic use case: we create a key and check its presence.
 fun demoL20P1KeystoreSetup(): List<String> {
     val keystore = KeystoreSimulatorP1()
     val key = keystore.generateKey("app_master_key")

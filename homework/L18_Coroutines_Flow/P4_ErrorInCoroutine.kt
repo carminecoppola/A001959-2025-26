@@ -1,5 +1,5 @@
-// L18 - P4: gestione degli errori nelle coroutine con try-catch.
-// L'obiettivo e intercettare gli errori durante un'operazione asincrona simulata.
+// L18 - P4: gestione of the errors nelle coroutine with try-catch.
+// The goal is to catch errors during a simulated async operation.
 
 sealed class CoroutineResultP4<out T> {
     data class Success<T>(val data: T) : CoroutineResultP4<T>()
@@ -19,7 +19,7 @@ class CoroutineErrorHandlerSimulatorP4 {
     }
 }
 
-// Caso d'uso di base: vediamo come si comporta il gestore errori.
+// Basic use case: we see how the error handler behaves.
 fun demoL18P4ErrorInCoroutine(): List<CoroutineResultP4<String>> {
     val handler = CoroutineErrorHandlerSimulatorP4()
     return listOf(

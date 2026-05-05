@@ -1,5 +1,5 @@
-// L17 - P5: mapping dei dati JSON in oggetti Kotlin.
-// Questo passaggio trasforma la risposta remota in un modello comodo da usare.
+// L17 - P5: mapping dei data JSON in oggetti Kotlin.
+// This step transforms the remote response into a model that is easy to use.
 
 data class UserDtoP5(
     val id: Int,
@@ -21,7 +21,7 @@ class UserMapperP5 {
     }
 }
 
-// Caso d'uso di base: convertiamo un DTO in un modello pronto per la UI.
+// Basic use case: we convert a DTO into a UI-ready model.
 fun demoL17P5JSONModelMapping(): UserUiModelP5 {
     val dto = UserDtoP5(1, "Luca", "luca@example.com")
     return UserMapperP5().toUiModel(dto)

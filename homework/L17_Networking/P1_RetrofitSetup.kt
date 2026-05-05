@@ -1,5 +1,5 @@
 // L17 - P1: setup di Retrofit.
-// Questo esempio mostra la struttura di base per parlare con una REST API.
+// This example shows the struttura di base for parlare with a REST API.
 
 data class RetrofitConfigP1(
     val baseUrl: String,
@@ -15,7 +15,7 @@ class RetrofitBuilderSimulatorP1 {
     }
 }
 
-// Caso d'uso di base: configuriamo un client Retrofit simulato.
+// Basic use case: we configure a client Retrofit simulato.
 fun demoL17P1RetrofitSetup(): RetrofitConfigP1 {
     return RetrofitBuilderSimulatorP1().build("https://api.example.com/")
 }

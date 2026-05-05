@@ -1,5 +1,5 @@
 // L23 - P1: prevenzione SQL injection.
-// L'obiettivo e evitare query costruite concatenando testo non fidato.
+// The goal is to avoid queries built by concatenating untrusted text.
 
 data class QueryP1(
     val sql: String,
@@ -30,11 +30,11 @@ data class OwaspQuizResultP1(
 
 class OwaspTop5QuizSimulatorP1 {
     private val questions = listOf(
-        OwaspQuestionP1("M1", "Improper Credential Usage", "A", "Le credenziali non vanno hardcodate nel client."),
-        OwaspQuestionP1("M2", "Inadequate Supply Chain Security", "B", "Le dipendenze devono essere verificate e aggiornate."),
-        OwaspQuestionP1("M3", "Insecure Authentication/Authorization", "C", "Serve un controllo robusto di sessione e ruoli."),
-        OwaspQuestionP1("M4", "Insufficient Input/Output Validation", "A", "Input non validati portano a injection e parsing bug."),
-        OwaspQuestionP1("M5", "Insecure Communication", "B", "TLS e certificate validation sono obbligatori.")
+        OwaspQuestionP1("M1", "Improper Credential Usage", "A", "Credentials must not be hardcoded in the client."),
+        OwaspQuestionP1("M2", "Inadequate Supply Chain Security", "B", "Dependencies must be verified and updated."),
+        OwaspQuestionP1("M3", "Insecure Authentication/Authorization", "C", "Robust session and role control is required."),
+        OwaspQuestionP1("M4", "Insufficient Input/Output Validataon", "A", "Unvalidated input leads to injection and parsing bugs."),
+        OwaspQuestionP1("M5", "Insecure Communication", "B", "TLS and certificate validataon sono obbligatori.")
     )
 
     fun evaluate(answers: Map<String, String>): OwaspQuizResultP1 {
@@ -55,7 +55,7 @@ class OwaspTop5QuizSimulatorP1 {
     }
 }
 
-// Caso d'uso di base: costruiamo una query sicura con parametro separato.
+// Basic use case: we build a secure query with a separate parameter.
 fun demoL23P1SQLInjectionPrevention(): QueryP1 {
     return SQLInjectionPreventionSimulatorP1().buildSafeQuery("42")
 }

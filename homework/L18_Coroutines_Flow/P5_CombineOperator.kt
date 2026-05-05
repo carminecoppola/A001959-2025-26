@@ -1,6 +1,6 @@
 // L18 - P5: operatore combine().
-// Qui mostriamo l'idea di combinare due flussi per produrre un unico risultato.
-// Quando UNA fonte cambia, il risultato combinato si aggiorna.
+// Here we show l'idea di combinare two flows for produrre a unico risultato.
+// When ONE source changes, the combined result updates.
 
 class SimpleCombineFlowP5<T>(initialValue: T) {
     private var value: T = initialValue
@@ -20,19 +20,19 @@ class SimpleCombineFlowP5<T>(initialValue: T) {
 }
 
 class CombineOperatorSimulatorP5 {
-    // Combinazione reattiva: quando uno dei flussi cambia, aggiorniamo il risultato
+    // Reactive combination: when one flow changes, we update the result
     fun combineFlows(
         left: SimpleCombineFlowP5<String>,
         right: SimpleCombineFlowP5<String>,
         onCombined: (String) -> Unit
     ) {
-        // Osserviamo il primo flusso
+        // Osserviamo the first flow
         left.collect { leftValue ->
             val combined = "$leftValue | ${right.getValue()}"
             onCombined(combined)
         }
 
-        // Osserviamo il secondo flusso
+        // Osserviamo the second flow
         right.collect { rightValue ->
             val combined = "${left.getValue()} | $rightValue"
             onCombined(combined)
@@ -40,7 +40,7 @@ class CombineOperatorSimulatorP5 {
     }
 }
 
-// Caso d'uso di base: combiniamo due flussi reattivamente.
+// Basic use case: combiniamo two flows reattivamente.
 fun demoL18P5CombineOperator(): List<String> {
     val output = mutableListOf<String>()
 
@@ -52,11 +52,11 @@ fun demoL18P5CombineOperator(): List<String> {
         output.add(combined)
     }
 
-    // Quando cambia uno dei flussi, il risultato si aggiorna automaticamente
-    output.add("--- Dopo aggiornamento leftFlow ---")
+    // When one flow changes, the result updates automatically
+    output.add("--- Dopo updatesmento leftFlow ---")
     leftFlow.emit("B")
 
-    output.add("--- Dopo aggiornamento rightFlow ---")
+    output.add("--- Dopo updatesmento rightFlow ---")
     rightFlow.emit("2")
 
     return output

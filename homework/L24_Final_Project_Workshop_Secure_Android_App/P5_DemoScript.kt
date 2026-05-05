@@ -1,15 +1,15 @@
 // L24 - P5: script di demo.
-// Questo file descrive i passi di una dimostrazione dell'app sicura.
+// This file describes the steps of a secure app demo.
 
 class DemoScriptSimulatorP5 {
     fun script(): List<String> {
         return listOf(
             "1. Avviare l'app",
-            "2. Autenticazione biometrica con fallback PIN",
-            "3. Mostrare il token salvato in modo sicuro",
-            "4. Aprire la dashboard protetta",
-            "5. Verificare il salvataggio cifrato",
-            "6. Effettuare logout e invalidare la sessione"
+            "2. Biometric authentication with PIN fallback",
+            "3. Show the securely stored token",
+            "4. Open the protected dashboard",
+            "5. Verificare the salvataggio encrypted",
+            "6. Log out and invalidate the session"
         )
     }
 
@@ -18,7 +18,7 @@ class DemoScriptSimulatorP5 {
     }
 }
 
-// Caso d'uso di base: generiamo lo script testuale della demo.
+// Basic use case: we generate the textual demo script.
 fun demoL24P5DemoScript(): String {
     return DemoScriptSimulatorP5().run()
 }

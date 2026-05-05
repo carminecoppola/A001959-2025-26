@@ -1,5 +1,5 @@
-// Esercizio P4: uso di una griglia per disporre gli elementi.
-// In Android un GridLayoutManager organizza gli item su piu colonne.
+// Exercise P4: using a grid to arrange items.
+// In Android, a GridLayoutManager arranges items across multiple columns.
 
 data class GridItemP4(
     val id: Int,
@@ -15,12 +15,12 @@ class GridLayoutManagerSimulatorP4(
 ) {
     init {
         require(config.spanCount > 0) {
-            "Il numero di colonne deve essere maggiore di zero"
+            "The number of columns must be greater than zero"
         }
     }
 
-    // Utilizziamo GridLayoutManager per disporre gli elementi in una griglia con 2 colonne.
-    // Qui simuliamo quel comportamento raggruppando gli elementi per riga.
+    // We use GridLayoutManager to arrange items in a 2-column grid.
+    // Here we simulate that behavior by grouping items per row.
     fun layout(items: List<GridItemP4>): List<List<GridItemP4>> {
         val rows = mutableListOf<List<GridItemP4>>()
 
@@ -40,7 +40,7 @@ class GridLayoutManagerSimulatorP4(
     }
 }
 
-// Caso d'uso di base: distribuiamo gli elementi in una griglia da 2 colonne.
+// Basic use case: we distribute items in a 2-column grid.
 fun demoP4GridLayout(): List<String> {
     val items = listOf(
         GridItemP4(1, "A"),

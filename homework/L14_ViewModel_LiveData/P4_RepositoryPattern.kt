@@ -1,5 +1,5 @@
-// Esercizio P4: pattern Repository.
-// Il repository nasconde la sorgente dei dati e offre una sola interfaccia alla UI.
+// Exercise P4: pattern Repository.
+// Il repository nasconde the sorgente dei data and offre a sola interfaccia alla UI.
 
 data class UserProfileP4(
     val id: Int,
@@ -28,7 +28,7 @@ class UserRepositoryP4(
     }
 }
 
-// Caso d'uso di base: leggiamo i nomi dei profili tramite il repository.
+// Basic use case: we read i nomi dei profili tramite the repository.
 fun demoP4RepositoryPattern(): List<String> {
     val repository = UserRepositoryP4(UserLocalDataSourceP4())
     return repository.loadUserNames()

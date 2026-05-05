@@ -1,5 +1,5 @@
-// L24 - P3: configurazione delle varianti di build.
-// Mostriamo come differenziare debug e release con impostazioni semplici.
+// L24 - P3: configurazione of the varianti di build.
+// We show how to differentiate debug and release with simple settings.
 
 data class BuildVariantConfigP3(
     val name: String,
@@ -25,7 +25,7 @@ class BuildVariantSimulatorP3 {
     }
 }
 
-// Caso d'uso di base: confrontiamo debug e release.
+// Basic use case: confrontiamo debug and release.
 fun demoL24P3BuildVariantConfig(): List<BuildVariantConfigP3> {
     val simulator = BuildVariantSimulatorP3()
     return listOf(simulator.debug(), simulator.release())

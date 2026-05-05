@@ -1,5 +1,5 @@
-// Esercizio P1: definizione di una Entity per un database Room.
-// Qui simuliamo una tabella con una semplice data class Kotlin.
+// Exercise P1: definition of an Entity for a Room database.
+// Here we simulate a tabella with a semplice data class Kotlin.
 
 data class BookEntityP1(
     val id: Int,
@@ -7,7 +7,7 @@ data class BookEntityP1(
     val author: String
 )
 
-// Caso d'uso di base: creiamo una lista di entity come se fossero record del database.
+// Basic use case: we create a list of entities as if they were database records.
 fun demoP1EntityDefinition(): List<BookEntityP1> {
     return listOf(
         BookEntityP1(1, "Kotlin Basics", "Marco"),

@@ -1,5 +1,5 @@
 // L23 - P4: minimizzazione dell'esportazione.
-// L'obiettivo e lasciare esposti solo i componenti strettamente necessari.
+// The goal is to expose only strictly necessary components.
 
 data class AppComponentP4(
     val name: String,
@@ -19,7 +19,7 @@ class ExportMinimizationSimulatorP4 {
     }
 }
 
-// Caso d'uso di base: riduciamo l'esportazione dei componenti interni.
+// Basic use case: riduciamo l'esportazione dei componenti interni.
 fun demoL23P4ExportMinimization(): List<AppComponentP4> {
     val components = listOf(
         AppComponentP4("InternalSettingsActivity", exported = true),

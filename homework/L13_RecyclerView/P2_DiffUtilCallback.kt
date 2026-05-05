@@ -1,6 +1,6 @@
-// Esercizio P2: implementazione semplice di una DiffUtil.Callback.
-// DiffUtil serve a confrontare due liste e aggiornare solo gli elementi cambiati,
-// evitando di ridisegnare tutta la RecyclerView.
+// Exercise P2: implementazione semplice di a DiffUtil.Callback.
+// DiffUtil compares two lists and updates only changed items,
+// evitando di ridisegnare tutta the RecyclerView.
 
 data class LessonItemP2(
     val id: Int,
@@ -16,18 +16,18 @@ class SimpleDiffUtilCallbackP2(
 
     fun getNewListSize(): Int = newList.size
 
-    // Qui confrontiamo l'identita dell'elemento, quindi capiamo se stiamo parlando
-    // dello stesso record anche se il contenuto e cambiato.
+    // Qui confrontiamo l'identita dell'item, quindi capiamo se stiamo parlando
+    // of the same record even if the content changed.
     fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldList[oldItemPosition].id == newList[newItemPosition].id
     }
 
-    // Qui confrontiamo il contenuto completo per capire se i dati sono davvero identici.
+    // Qui confrontiamo the contenuto completo for capire se i data sono davvero identici.
     fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
         return oldList[oldItemPosition] == newList[newItemPosition]
     }
 
-    // Metodo didattico per vedere il tipo di differenze tra le due liste.
+    // Educational helper to inspect differences between two lists.
     fun calculateChanges(): List<String> {
         val changes = mutableListOf<String>()
         val maxSize = maxOf(oldList.size, newList.size)
@@ -57,7 +57,7 @@ class SimpleDiffUtilCallbackP2(
     }
 }
 
-// Caso d'uso di base: confrontiamo una lista vecchia con una nuova.
+// Basic use case: confrontiamo a list vecchia with a nuova.
 fun demoP2DiffUtilCallback(): List<String> {
     val oldList = listOf(
         LessonItemP2(1, "Apple", "Frutto rosso"),
@@ -65,7 +65,7 @@ fun demoP2DiffUtilCallback(): List<String> {
     )
 
     val newList = listOf(
-        LessonItemP2(1, "Apple", "Frutto rosso e dolce"),
+        LessonItemP2(1, "Apple", "Red and sweet fruit"),
         LessonItemP2(3, "Cherry", "Frutto piccolo")
     )
 

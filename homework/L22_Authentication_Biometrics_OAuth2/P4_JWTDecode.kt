@@ -1,5 +1,5 @@
-// L22 - P4: decodifica di un token JWT.
-// L'esempio estrae le informazioni dal payload in modo semplice.
+// L22 - P4: decodifica di a token JWT.
+// The example extracts payload information in a simple way.
 
 import java.util.Base64
 
@@ -18,14 +18,14 @@ class JwtDecoderSimulatorP4 {
     fun decode(token: String): JwtDecodeResultP4 {
         val parts = token.split(".")
         if (parts.size != 3) {
-            return JwtDecodeResultP4(payload = null, error = "JWT non valido: servono 3 parti")
+            return JwtDecodeResultP4(payload = null, error = "Invalid JWT: 3 parts are required")
         }
 
         val payloadPart = parts[1]
         val json = try {
             String(Base64.getUrlDecoder().decode(payloadPart))
         } catch (_: IllegalArgumentException) {
-            return JwtDecodeResultP4(payload = null, error = "JWT non valido: payload Base64URL corrotto")
+            return JwtDecodeResultP4(payload = null, error = "Invalid JWT: corrupted Base64URL payload")
         }
 
         val subject = Regex("\"sub\"\\s*:\\s*\"([^\"]+)\"").find(json)?.groupValues?.get(1) ?: ""
@@ -33,7 +33,7 @@ class JwtDecoderSimulatorP4 {
         val exp = Regex("\\\"exp\\\"\\s*:\\s*([0-9]+)").find(json)?.groupValues?.get(1)?.toLongOrNull()
 
         if (subject.isBlank() || role.isBlank() || exp == null) {
-            return JwtDecodeResultP4(payload = null, error = "JWT non valido: claim obbligatorie mancanti")
+            return JwtDecodeResultP4(payload = null, error = "Invalid JWT: missing required claims")
         }
 
         return JwtDecodeResultP4(
@@ -47,7 +47,7 @@ class JwtDecoderSimulatorP4 {
     }
 }
 
-// Caso d'uso di base: decodifichiamo un JWT con payload minimalista.
+// Basic use case: decodifichiamo a JWT with payload minimalist.
 fun demoL22P4JWTDecode(): List<String> {
     val decoder = JwtDecoderSimulatorP4()
     val payloadJson = "{" + "\"sub\":\"student-1\",\"role\":\"admin\",\"exp\":2000}"

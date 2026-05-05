@@ -1,5 +1,5 @@
-// L21 - P2: hash del certificato.
-// L'idea e confrontare l'impronta del certificato con un valore atteso.
+// L21 - P2: hash of the certificato.
+// The idea is confrontare l'impronta of the certificato with a valore atteso.
 
 class CertificateHashSimulatorP2 {
     fun calculateHash(certificateData: String): String {
@@ -11,7 +11,7 @@ class CertificateHashSimulatorP2 {
     }
 }
 
-// Caso d'uso di base: calcoliamo e verifichiamo un hash.
+// Basic use case: calcoliamo and verifichiamo a hash.
 fun demoL21P2CertificateHash(): List<String> {
     val simulator = CertificateHashSimulatorP2()
     val certData = "fake-certificate-data"

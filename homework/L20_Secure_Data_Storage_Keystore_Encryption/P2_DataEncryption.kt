@@ -1,5 +1,5 @@
-// L20 - P2: cifratura dei dati usando il Keystore.
-// Il dato viene trasformato prima di essere salvato e poi recuperato in chiaro.
+// L20 - P2: encryption dei data usando the Keystore.
+// Data is transformed before being stored and then recovered in plaintext.
 
 class DataEncryptionSimulatorP2 {
     private fun encrypt(value: String): String = value.reversed()
@@ -15,7 +15,7 @@ class DataEncryptionSimulatorP2 {
     }
 }
 
-// Caso d'uso di base: cifriamo un testo e poi lo recuperiamo.
+// Basic use case: we encrypt a text and then recover it.
 fun demoL20P2DataEncryption(): List<String> {
     val encryption = DataEncryptionSimulatorP2()
     val cipher = encryption.encryptData("messaggio segreto")

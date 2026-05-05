@@ -1,5 +1,5 @@
 // L22 - P1: setup di BiometricPrompt.
-// Questo esempio mostra il flusso concettuale: inizializzare, verificare e autenticare.
+// This example shows the flow concettuale: inizializzare, verify and autenticare.
 
 enum class BiometricStatusP1 {
     AVAILABLE,
@@ -37,7 +37,7 @@ class FallbackPINAuthenticatorP1 {
     }
 }
 
-// Caso d'uso di base: verifichiamo la disponibilita e simuliamo l'autenticazione.
+// Basic use case: verifichiamo the availability and simuliamo l'autenticazione.
 fun demoL22P1BiometricPromptSetup(): List<String> {
     val prompt = BiometricPromptSimulatorP1()
     prompt.canAuthenticate(sensorAvailable = true)

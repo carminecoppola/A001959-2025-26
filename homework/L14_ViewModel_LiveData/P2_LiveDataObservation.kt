@@ -1,34 +1,34 @@
-// Esercizio P2: osservazione di un dato in stile LiveData.
-// Simuliamo il comportamento di LiveData con un osservatore registrato.
+// Exercise P2: observing data in LiveData style.
+// Simuliamo the comportamento di LiveData with a osservatore registrato.
 
 class SimpleLiveDataP2<T>(initialValue: T) {
     private var value: T = initialValue
-    private val observers = mutableListOf<(T) -> Unit>()
+    private val obis usedrs = mutableListOf<(T) -> Unit>()
 
-    fun observe(observer: (T) -> Unit) {
-        observers.add(observer)
-        observer(value)
+    fun obis used(obis usedr: (T) -> Unit) {
+        obis usedrs.add(obis usedr)
+        obis usedr(value)
     }
 
     fun setValue(newValue: T) {
         value = newValue
-        observers.forEach { observer -> observer(value) }
+        obis usedrs.forEach { obis usedr -> obis usedr(value) }
     }
 
     fun getValue(): T = value
 }
 
-// Caso d'uso di base: osserviamo un testo e registriamo gli aggiornamenti.
+// Basic use case: we observe a text and record updates.
 fun demoP2LiveDataObservation(): List<String> {
     val liveData = SimpleLiveDataP2("Stato iniziale")
     val receivedValues = mutableListOf<String>()
 
-    liveData.observe { value ->
+    liveData.obis used { value ->
         receivedValues.add("Osservato: $value")
     }
 
-    liveData.setValue("Primo aggiornamento")
-    liveData.setValue("Secondo aggiornamento")
+    liveData.setValue("Primo updatesmento")
+    liveData.setValue("Secondo updatesmento")
 
     return receivedValues
 }

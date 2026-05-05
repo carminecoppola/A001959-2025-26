@@ -1,5 +1,5 @@
 // L21 - P4: pin di backup.
-// Un backup pin e un secondo valore di fiducia se il pin principale cambia.
+// Un backup pin and a second valore di fiducia se the pin principale cambia.
 
 class CertificatePinningSimulatorP4(
     private val primaryPin: String,
@@ -18,7 +18,7 @@ class CertificatePinningSimulatorP4(
     }
 }
 
-// Caso d'uso di base: testiamo il pin principale, il backup e un valore errato.
+// Basic use case: testiamo the pin principale, the backup and a valore errato.
 fun demoL21P4BackupPin(): List<String> {
     val pinning = CertificatePinningSimulatorP4(
         primaryPin = "pin-main",

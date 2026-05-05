@@ -1,16 +1,16 @@
-// L24 - P2: checklist di sicurezza.
-// Questa lista aiuta a verificare i punti principali prima del rilascio.
+// L24 - P2: security checklist.
+// Questa list aiuta a verify i punti principali prima of the rilascio.
 
 class SecurityChecklistSimulatorP2 {
     private val checklist = listOf(
         "HTTPS attivo",
-        "Token salvati in modo sicuro",
+        "Tokens stored securely",
         "Permessi minimi",
         "Log sensibili rimossi",
         "Backup verificato",
         "Biometria o PIN di fallback",
-        "OAuth2 con refresh token",
-        "JWT con scadenza controllata",
+        "OAuth2 with refresh token",
+        "JWT with expiration controlsta",
         "Componenti esportati minimizzati",
         "ProGuard/R8 attivo",
         "Nessun secret hardcoded"
@@ -23,7 +23,7 @@ class SecurityChecklistSimulatorP2 {
     }
 }
 
-// Caso d'uso di base: controlliamo alcuni elementi gia completati.
+// Basic use case: we check some already-completed items.
 fun demoL24P2SecurityChecklist(): List<String> {
     val simulator = SecurityChecklistSimulatorP2()
     return simulator.completedItems(setOf("HTTPS attivo", "Permessi minimi", "Backup verificato", "Nessun secret hardcoded"))

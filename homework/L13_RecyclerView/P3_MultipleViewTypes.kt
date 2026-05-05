@@ -1,5 +1,5 @@
-// Esercizio P3: gestione di piu tipi di vista nello stesso elenco.
-// In una RecyclerView reale questo serve quando gli elementi hanno layout diversi.
+// Exercise P3: gestione di more tipi di vista nello stesso elenco.
+// In a real RecyclerView this is used when items have different layouts.
 
 sealed class FeedItemP3 {
     data class TextItem(val id: Int, val message: String) : FeedItemP3()
@@ -16,8 +16,8 @@ class MultipleViewTypesAdapterP3(
         const val VIEW_TYPE_DIVIDER = 3
     }
 
-    // Qui stiamo verificando il tipo di elemento e restituendo un layout diverso
-    // per ogni tipo.
+    // Qui stiamo verificando the tipo di item and remaintuendo a layout diverso
+    // for ogni tipo.
     fun getItemViewType(position: Int): Int {
         return when (items[position]) {
             is FeedItemP3.TextItem -> VIEW_TYPE_TEXT
@@ -26,7 +26,7 @@ class MultipleViewTypesAdapterP3(
         }
     }
 
-    // Questa funzione simula la creazione di un layout diverso in base al tipo.
+    // Questa funzione simula the creazione di a layout diverso in base al tipo.
     fun onCreateViewHolder(viewType: Int): String {
         return when (viewType) {
             VIEW_TYPE_TEXT -> "Creata ViewHolder testuale"
@@ -36,7 +36,7 @@ class MultipleViewTypesAdapterP3(
         }
     }
 
-    // Questa funzione simula il collegamento tra dati e vista.
+    // Questa funzione simula the collegamento tra data and vista.
     fun onBindViewHolder(position: Int): String {
         return when (val item = items[position]) {
             is FeedItemP3.TextItem -> "Testo #${item.id}: ${item.message}"
@@ -58,13 +58,13 @@ class MultipleViewTypesAdapterP3(
     }
 }
 
-// Caso d'uso di base: costruiamo un feed con elementi diversi.
+// Basic use case: costruiamo a feed with items different.
 fun demoP3MultipleViewTypes(): List<String> {
     val feedItems = listOf(
         FeedItemP3.TextItem(1, "Benvenuto nel feed"),
         FeedItemP3.ImageItem(2, "https://example.com/image.png", "Un esempio di immagine"),
         FeedItemP3.DividerItem(3),
-        FeedItemP3.TextItem(4, "Altro messaggio di testo")
+        FeedItemP3.TextItem(4, "Altro messaggio di text")
     )
 
     val adapter = MultipleViewTypesAdapterP3(feedItems)
