@@ -1,47 +1,104 @@
 package com.example.l21networksecurity
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.l21networksecurity.ui.theme.L21NetworkSecurityTheme
+import androidx.appcompat.app.AppCompatActivity
+import com.example.l21networksecurity.databinding.ActivityMainBinding
 
-class MainActivity : ComponentActivity() {
+/**
+ * MainActivity
+ *
+ * Entry point of the Lesson 21 demonstration application.
+ *
+ * This Activity provides a simple UI to execute:
+ * - a standard HTTPS request
+ * - an HTTPS request protected with certificate pinning
+ * - a plain HTTP request that should be blocked by Network Security Config
+ *
+ * The Activity intentionally keeps the UI simple in order to focus on the
+ * network security concepts presented in the lecture slides.
+ */
+class MainActivity : AppCompatActivity() {
+
+    /**
+     * ViewBinding instance used to access the XML layout safely.
+     */
+    private lateinit var binding: ActivityMainBinding
+
+    /**
+     * Client object responsible for all network security demonstrations.
+     */
+    private lateinit var secureNetworkClient: SecureNetworkClient
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            L21NetworkSecurityTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+
+        /**
+         * Inflate the XML layout using ViewBinding.
+         */
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        /**
+         * Initialize the secure network client.
+         */
+        secureNetworkClient = SecureNetworkClient()
+
+        /**
+         * Demonstrates a normal HTTPS request.
+         *
+         * This request should succeed if the device has Internet access.
+         */
+        binding.buttonHttpsRequest.setOnClickListener {
+            runNetworkDemo {
+                secureNetworkClient.runHttpsRequest()
+            }
+        }
+
+        /**
+         * Demonstrates certificate pinning.
+         *
+         * In this project, the configured pin is intentionally invalid.
+         * Therefore, this request should fail with a certificate pinning error.
+         */
+        binding.buttonPinnedRequest.setOnClickListener {
+            runNetworkDemo {
+                secureNetworkClient.runPinnedHttpsRequest()
+            }
+        }
+
+        /**
+         * Demonstrates cleartext traffic blocking.
+         *
+         * Since the Network Security Config disables HTTP globally,
+         * this request should be blocked by Android.
+         */
+        binding.buttonHttpRequest.setOnClickListener {
+            runNetworkDemo {
+                secureNetworkClient.runHttpRequest()
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    /**
+     * Executes a network operation on a background thread.
+     *
+     * Android does not allow network operations on the main UI thread.
+     * This helper method keeps the UI responsive and then posts the result
+     * back to the main thread.
+     */
+    private fun runNetworkDemo(operation: () -> String) {
+        binding.textViewOutput.text = "Running network request..."
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    L21NetworkSecurityTheme {
-        Greeting("Android")
+        Thread {
+            val result = try {
+                operation()
+            } catch (e: Exception) {
+                "Unexpected error: ${e.message}"
+            }
+
+            runOnUiThread {
+                binding.textViewOutput.text = result
+            }
+        }.start()
     }
 }

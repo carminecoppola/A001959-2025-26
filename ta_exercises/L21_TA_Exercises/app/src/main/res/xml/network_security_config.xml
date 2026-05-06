@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<network-security-config>
 
-</PreferenceScreen>
+    <!--
+        Base security policy for the whole application.
+
+        cleartextTrafficPermitted="false" blocks plain HTTP traffic globally.
+        This is coherent with Lesson 21: cleartext traffic must not be enabled
+        globally in production applications.
+    -->
+    <base-config cleartextTrafficPermitted="false">
+
+        <!--
+            The application trusts only system Certificate Authorities.
+            User-installed CAs are not trusted here, which helps reduce
+            the risk of production traffic interception.
+        -->
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+
+    </base-config>
+
+</network-security-config>
