@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lesson 23 - OWASP Mobile Top 10"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Common mobile vulnerabilities, attack vectors and mitigations"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonShowTop10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show OWASP Mobile Top 10"
+            android:layout_marginTop="24dp" />
+
+        <Button
+            android:id="@+id/buttonRunChecklist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Run Local Security Checklist"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonShowBugs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show 3 Buggy Patterns"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/buttonShowMitigations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Correct Mitigations"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/textViewOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Output will appear here."
+            android:textSize="16sp"
+            android:layout_marginTop="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>
